@@ -1,3 +1,4 @@
+import { setRequestLocale } from "next-intl/server";
 import { HeroSection } from "@/components/sections/HeroSection";
 import { CertificatesSection } from "@/components/sections/CertificatesSection";
 import { SchoolChoiceSection } from "@/components/sections/SchoolChoiceSection";
@@ -6,7 +7,14 @@ import { CampusSection } from "@/components/sections/CampusSection";
 import { FounderSection } from "@/components/sections/FounderSection";
 import { EnrollmentSection } from "@/components/sections/EnrollmentSection";
 
-export default function HomePage() {
+export default async function HomePage({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  setRequestLocale(locale);
+
   return (
     <>
       <HeroSection />

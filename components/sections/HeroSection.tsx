@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Image from "next/image";
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 import { useTranslations } from "next-intl";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -31,7 +31,7 @@ export function HeroSection() {
   }, [slides.length]);
 
   return (
-    <section className="bg-white p-4" aria-label="Главный экран">
+    <section className="bg-white p-7.5" aria-label="Главный экран">
       <div className="relative overflow-hidden flex flex-col min-h-[calc(100svh-60px)]">
 
         {/* Background — cross-fading slideshow, each layer slowly breathes out */}
@@ -41,8 +41,8 @@ export function HeroSection() {
               key={slide.image}
               className="absolute inset-0"
               initial={false}
-              animate={{ opacity: active === i ? 1 : 0, scale: active === i ? 1 : 0.94 }}
-              transition={{ duration: 1.4, ease: crossFade }}
+              animate={{ opacity: active === i ? 1 : 0, scale: active === i ? 1 : 0.78 }}
+              transition={{ duration: 1.8, ease: crossFade }}
             >
               <Image
                 src={slide.image}

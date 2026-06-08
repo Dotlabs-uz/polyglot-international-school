@@ -1,7 +1,7 @@
 "use client";
 
-import { useRouter } from "next/navigation";
 import { useLocale } from "next-intl";
+import { usePathname, useRouter } from "@/i18n/navigation";
 import { cn } from "@/lib/utils";
 
 const LOCALES = [
@@ -15,11 +15,11 @@ type LocaleCode = (typeof LOCALES)[number]["code"];
 export function LocaleSwitcher() {
   const current = useLocale() as LocaleCode;
   const router = useRouter();
+  const pathname = usePathname();
 
   const setLocale = (locale: LocaleCode) => {
     if (locale === current) return;
-    document.cookie = `locale=${locale}; path=/; max-age=31536000; SameSite=Lax`;
-    router.refresh();
+    router.replace(pathname, { locale });
   };
 
   return (

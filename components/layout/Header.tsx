@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 import { useState } from "react";
 import { RiMenuLine, RiCloseLine } from "react-icons/ri";
 import { useTranslations } from "next-intl";
@@ -16,7 +16,7 @@ export function Header() {
     <>
       {/* ── Top bar ─────────────────────────────────────── */}
       <header className="absolute top-7.5 left-0 right-0 z-50">
-        <div className="max-w-360 mx-auto px-7.5 lg:px-12.5">
+        <div className="max-w-360 mx-auto px-7.5">
           <div className="flex items-center justify-between h-18 lg:h-21">
 
             {/* Left: hamburger + label */}
