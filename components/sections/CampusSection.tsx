@@ -51,7 +51,7 @@ export function CampusSection() {
 
       {/* Stats — interactive carousel with animated underline */}
       <div className="max-w-360 mx-auto px-7.5 pb-12 md:pb-16">
-        <div className="border-t border-[#e2e2e2] pt-10">
+        <div className="pt-10">
           <Carousel opts={{ align: "start", dragFree: true }}>
             <CarouselContent className="-ml-4">
               {stats.map((stat, i) => {
