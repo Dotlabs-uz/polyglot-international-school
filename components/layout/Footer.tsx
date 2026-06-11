@@ -8,16 +8,14 @@ export function Footer() {
 
   return (
     <footer className="bg-surface" role="contentinfo">
-      {/* ── Main ─────────────────────────────────────────── */}
       <div className="max-w-360 mx-auto px-7.5 pt-16 md:pt-20 pb-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-[1fr_160px_220px_200px] gap-10 lg:gap-12">
 
-          {/* Brand */}
           <div>
-            <Link href="/" aria-label="Polyglot International School">
+            <Link href="/" aria-label="Polyglot International School — главная страница">
               <Image
                 src="/logo_footer.png"
-                alt="Polyglot International School"
+                alt="Polyglot International School — логотип"
                 width={130}
                 height={72}
                 className="object-contain mb-4"
@@ -28,11 +26,10 @@ export function Footer() {
             </p>
           </div>
 
-          {/* ШКОЛА */}
-          <div>
-            <h3 className="text-[11px] font-semibold tracking-widest uppercase mb-5 text-accent">
+          <nav aria-label="Разделы школы">
+            <h2 className="text-[11px] font-semibold tracking-widest uppercase mb-5 text-accent">
               {t("schoolCol")}
-            </h3>
+            </h2>
             <ul className="flex flex-col gap-3" role="list">
               {(["link1", "link2", "link3"] as const).map((k) => (
                 <li key={k}>
@@ -45,39 +42,33 @@ export function Footer() {
                 </li>
               ))}
             </ul>
-          </div>
+          </nav>
 
-          {/* КОНТАКТЫ */}
           <div>
-            <h3 className="text-[11px] font-semibold tracking-widest uppercase mb-5 text-accent">
+            <h2 className="text-[11px] font-semibold tracking-widest uppercase mb-5 text-accent">
               {t("contactsCol")}
-            </h3>
-            <ul className="flex flex-col gap-3 text-sm text-[#444]" role="list">
-              <li>{t("address")}</li>
-              <li>
-                <a
-                  href="tel:+998000000000"
-                  className="hover:text-[#1a1a1a] transition-colors"
-                >
-                  +998 (00) 000-00-00
-                </a>
-              </li>
-              <li>
-                <a
-                  href="mailto:info@polyglot.uz"
-                  className="hover:text-[#1a1a1a] transition-colors"
-                >
-                  info@polyglot.uz
-                </a>
-              </li>
-            </ul>
+            </h2>
+            <address className="flex flex-col gap-3 text-sm text-[#444] not-italic">
+              <p>{t("address")}</p>
+              <a
+                href="tel:+998000000000"
+                className="hover:text-[#1a1a1a] transition-colors"
+              >
+                +998 (00) 000-00-00
+              </a>
+              <a
+                href="mailto:info@polyglot.uz"
+                className="hover:text-[#1a1a1a] transition-colors"
+              >
+                info@polyglot.uz
+              </a>
+            </address>
           </div>
 
-          {/* ПОСТУПЛЕНИЕ */}
           <div>
-            <h3 className="text-[11px] font-semibold tracking-widest uppercase mb-5 text-accent">
+            <h2 className="text-[11px] font-semibold tracking-widest uppercase mb-5 text-accent">
               {t("admissionsCol")}
-            </h3>
+            </h2>
             <p className="text-[#444] text-sm leading-snug mb-6">
               {t("enrollmentNote")}
             </p>
@@ -91,7 +82,6 @@ export function Footer() {
         </div>
       </div>
 
-      {/* ── Bottom bar ──────────────────────────────────── */}
       <div className="border-t border-[#ddd8cc]">
         <div className="max-w-360 mx-auto px-7.5 py-5 flex flex-col sm:flex-row justify-between items-center gap-2">
           <p className="text-[#aaa] text-xs">

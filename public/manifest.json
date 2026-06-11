@@ -1,0 +1,21 @@
+{
+  "name": "Polyglot International School",
+  "short_name": "Polyglot School",
+  "description": "Премиальная частная школа в Самарканде",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#142444",
+  "theme_color": "#142444",
+  "icons": [
+    {
+      "src": "/logo_header.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/logo_header.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

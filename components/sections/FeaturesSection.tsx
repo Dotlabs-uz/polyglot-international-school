@@ -29,7 +29,6 @@ export function FeaturesSection() {
         <Carousel opts={{ align: "start", dragFree: true }} className="text-[#1a1a1a]">
           <div className="grid grid-cols-1 lg:grid-cols-[340px_1fr] gap-10 lg:gap-14 xl:gap-16 items-start">
 
-            {/* Left — heading + description + controls */}
             <Reveal direction="right" className="lg:pt-1">
               <h2
                 id="features-heading"
@@ -46,7 +45,6 @@ export function FeaturesSection() {
               </div>
             </Reveal>
 
-            {/* Right — cards carousel, each card staggers in via Reveal delay */}
             <CarouselContent className="-ml-6">
               {cards.map((card, i) => (
                 <CarouselItem

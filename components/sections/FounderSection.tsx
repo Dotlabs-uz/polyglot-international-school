@@ -10,9 +10,7 @@ export function FounderSection() {
       <div className="max-w-360 mx-auto px-7.5">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 xl:gap-20 items-center">
 
-          {/* Left — text (centered as in design) */}
           <Reveal direction="up" className="text-center">
-            {/* heading — narrower (400px) */}
             <h2
               id="founder-heading"
               className="font-serif font-semibold text-[#1a1a1a] leading-[1.12] text-[34px] md:text-[44px] lg:text-[50px] mb-10 max-w-100  mx-auto"
@@ -20,7 +18,6 @@ export function FounderSection() {
               {t("heading")}
             </h2>
 
-            {/* body — 649px wide */}
             <div className="max-w-162.25 mx-auto">
               <p className="text-[#999] text-[13px] md:text-[14px] leading-[1.85] mb-5">
                 Polyglot основан{" "}
@@ -44,7 +41,6 @@ export function FounderSection() {
             </div>
           </Reveal>
 
-          {/* Right — portrait */}
           <Reveal direction="left" delay={0.1}>
             <div className="relative w-full aspect-4/3 overflow-hidden">
               <Image

@@ -27,7 +27,6 @@ export function SchoolChoiceSection() {
   ] as const;
 
   return (
-    // Full-bleed — breaks out of the global 30px page gutters
     <section
       className="w-full overflow-hidden pt-14 md:pt-18 lg:pt-20 pb-14 md:pb-18"
       style={{ backgroundColor: "#0E4170" }}
@@ -39,7 +38,6 @@ export function SchoolChoiceSection() {
         plugins={[Autoplay({ delay: 3500, stopOnInteraction: true })]}
         className="text-white"
       >
-        {/* Heading + controls */}
         <div className="max-w-360 mx-auto px-7.5 pb-10 md:pb-12 flex items-end justify-between gap-6">
           <motion.h2
             id="school-choice-heading"
@@ -63,7 +61,6 @@ export function SchoolChoiceSection() {
           </motion.div>
         </div>
 
-        {/* Photos — left aligned to gutter, bleed right */}
         <motion.div
           className="pl-7.5"
           initial={{ opacity: 0, y: 50 }}
@@ -78,7 +75,6 @@ export function SchoolChoiceSection() {
                 className={`pl-0 mr-2.5 basis-auto ${photo.w} max-w-[88vw]`}
               >
                 <div className="relative h-105 md:h-120 overflow-hidden">
-                  {/* parallax layer */}
                   <div data-parallax-layer className="absolute inset-0">
                     <Image
                       src={photo.src}

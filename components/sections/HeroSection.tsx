@@ -34,8 +34,7 @@ export function HeroSection() {
     <section className="bg-white p-7.5" aria-label="Главный экран">
       <div className="relative overflow-hidden flex flex-col min-h-[calc(100svh-60px)]">
 
-        {/* Background — cross-fading slideshow, each layer slowly breathes out */}
-        <div className="absolute inset-0">
+        <div className="absolute inset-0" aria-hidden="true">
           {slides.map((slide, i) => (
             <motion.div
               key={slide.image}
@@ -59,17 +58,14 @@ export function HeroSection() {
           <div className="absolute inset-0 bg-black/40" />
           <div className="absolute inset-0 bg-linear-to-t from-black/55 via-transparent to-black/20" />
 
-          {/* Cinematic "lights on" — scene opens from darkness, plays once */}
           <motion.div
             className="absolute inset-0 bg-black"
             initial={{ opacity: 0.88 }}
             animate={{ opacity: 0 }}
             transition={{ duration: 2.2, ease: slowDecel }}
-            aria-hidden="true"
           />
         </div>
 
-        {/* Centered content — heading & subtext cross-fade with each slide */}
         <div className="relative z-10 flex-1 flex flex-col items-center justify-center text-center px-6 md:px-10 pt-24 pb-8">
           <AnimatePresence mode="wait">
             <motion.div
@@ -111,20 +107,14 @@ export function HeroSection() {
           </motion.div>
         </div>
 
-        {/* Slider indicators — clickable, jump to any slide */}
-        <motion.div
-          className="relative z-10 pb-9 flex items-center justify-center gap-3"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1, delay: 1.2, ease: easeOut }}
-        >
+        <div className="relative z-10 pb-9 flex items-center justify-center gap-3" role="group" aria-label="Навигация по слайдам">
           {slides.map((_, i) => (
             <button
               key={i}
               type="button"
               onClick={() => setActive(i)}
               aria-label={`Показать слайд ${i + 1}`}
-              aria-current={active === i}
+              aria-current={active === i ? "true" : undefined}
               className="group relative py-2 px-1"
             >
               <span className="block w-8 h-0.5 bg-white/35 overflow-hidden">
@@ -137,7 +127,7 @@ export function HeroSection() {
               </span>
             </button>
           ))}
-        </motion.div>
+        </div>
       </div>
     </section>
   );

@@ -18,14 +18,11 @@ export function CertificatesSection() {
       <div className="max-w-360 mx-auto px-7.5">
         <div className="flex flex-col xl:flex-row gap-10 xl:gap-12 items-start">
 
-          {/* LEFT column */}
           <div className="flex flex-col gap-10 lg:gap-12 flex-1">
 
-            {/* Top row: photo + text — staggered */}
             <RevealGroup stagger={0.13} amount={0.2}>
               <div className="flex flex-col sm:flex-row gap-7 md:gap-9">
 
-                {/* photo */}
                 <RevealItem direction="up">
                   <motion.div
                     whileHover={{ y: -8 }}
@@ -42,7 +39,6 @@ export function CertificatesSection() {
                   </motion.div>
                 </RevealItem>
 
-                {/* text */}
                 <RevealItem direction="up" className="flex flex-col justify-center">
                   <h2
                     id="certificates-heading"
@@ -61,7 +57,6 @@ export function CertificatesSection() {
               </div>
             </RevealGroup>
 
-            {/* Bottom: label + 4 items staggered in 2-col grid */}
             <RevealGroup stagger={0.1} delayChildren={0.05} amount={0.2}>
               <RevealItem>
                 <p className="font-semibold text-[13px] text-[#1a1a1a] mb-5 tracking-wide">
@@ -81,7 +76,6 @@ export function CertificatesSection() {
 
           </div>
 
-          {/* RIGHT: big image slides in from the right */}
           <motion.div
             initial={{ opacity: 0, x: 70, scale: 0.97 }}
             whileInView={{ opacity: 1, x: 0, scale: 1 }}

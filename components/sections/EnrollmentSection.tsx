@@ -15,18 +15,15 @@ export function EnrollmentSection() {
     target: ref,
     offset: ["start end", "end start"],
   });
-  // soft parallax on the background image
   const y = useTransform(scrollYProgress, [0, 1], ["-8%", "8%"]);
 
   return (
-    // White-framed section (30px side gutters)
     <section className="bg-white px-7.5 py-2" aria-labelledby="enrollment-heading">
       <div
         ref={ref}
         className="relative overflow-hidden max-w-360 mx-auto"
         style={{ backgroundColor: "var(--enrollment-bg)" }}
       >
-        {/* Parallax background photo (cover / center) */}
         <motion.div
           style={{ y }}
           className="absolute top-[-10%] left-0 right-0 h-[120%] overflow-hidden pointer-events-none"
@@ -41,10 +38,8 @@ export function EnrollmentSection() {
           />
         </motion.div>
 
-        {/* Readability overlay */}
         <div className="absolute inset-0 bg-[#0B1B36]/45" aria-hidden="true" />
 
-        {/* Content */}
         <Reveal
           direction="up"
           className="relative px-7.5 py-20 md:py-28 lg:py-36 text-center"
@@ -60,7 +55,6 @@ export function EnrollmentSection() {
             {t("body")}
           </p>
 
-          {/* Semi-transparent button (~40%) */}
           <Link
             href="/admissions/apply"
             className="inline-block text-[11px] font-semibold tracking-widest uppercase text-white border border-white/50 bg-white/40 backdrop-blur-md hover:bg-white/50 px-11 py-4 transition-colors duration-300"

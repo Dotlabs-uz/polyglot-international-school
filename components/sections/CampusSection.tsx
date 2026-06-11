@@ -49,7 +49,6 @@ export function CampusSection() {
         </Reveal>
       </div>
 
-      {/* Stats — interactive carousel with animated underline */}
       <div className="max-w-360 mx-auto px-7.5 pb-12 md:pb-16">
         <div className="pt-10">
           <Carousel opts={{ align: "start", dragFree: true }}>
@@ -87,7 +86,6 @@ export function CampusSection() {
                         {stat.label}
                       </span>
 
-                      {/* animated underline — only the active item shows it */}
                       {isActive && (
                         <motion.span
                           layoutId="campus-tab-underline"
@@ -105,7 +103,6 @@ export function CampusSection() {
         </div>
       </div>
 
-      {/* Campus render */}
       <Reveal direction="up" className="max-w-360 mx-auto px-7.5 pb-16 md:pb-20">
         <div className="relative w-full aspect-16/7 overflow-hidden">
           <Image
