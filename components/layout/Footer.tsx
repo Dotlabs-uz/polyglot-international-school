@@ -31,10 +31,16 @@ export function Footer() {
               {t("schoolCol")}
             </h2>
             <ul className="flex flex-col gap-3" role="list">
-              {(["link1", "link2", "link3"] as const).map((k) => (
+              {(
+                [
+                  { k: "link1", href: "/about"     },
+                  { k: "link2", href: "/education"  },
+                  { k: "link3", href: "/life"       },
+                ] as const
+              ).map(({ k, href }) => (
                 <li key={k}>
                   <Link
-                    href="#"
+                    href={href}
                     className="text-[#444] hover:text-[#1a1a1a] text-sm transition-colors duration-200"
                   >
                     {t(k)}
@@ -51,7 +57,7 @@ export function Footer() {
             <address className="flex flex-col gap-3 text-sm text-[#444] not-italic">
               <p>{t("address")}</p>
               <a
-                href="tel:+998000000000"
+                href="tel:+998904703000"
                 className="hover:text-[#1a1a1a] transition-colors"
               >
                 +998 (00) 000-00-00
@@ -73,7 +79,7 @@ export function Footer() {
               {t("enrollmentNote")}
             </p>
             <Link
-              href="/admissions/apply"
+              href="/admissions"
               className="inline-block text-[11px] font-semibold tracking-widest uppercase text-white bg-accent hover:bg-accent-hover px-6 py-3 transition-colors duration-200"
             >
               {t("applyBtn")}

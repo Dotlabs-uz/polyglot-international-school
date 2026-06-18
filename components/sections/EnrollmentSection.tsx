@@ -56,7 +56,7 @@ export function EnrollmentSection() {
           </p>
 
           <Link
-            href="/admissions/apply"
+            href="/admissions"
             className="inline-block text-[11px] font-semibold tracking-widest uppercase text-white border border-white/50 bg-white/40 backdrop-blur-md hover:bg-white/50 px-11 py-4 transition-colors duration-300"
           >
             {t("cta")}

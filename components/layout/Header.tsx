@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { Link } from "@/i18n/navigation";
+import { Link, usePathname } from "@/i18n/navigation";
 import { useState } from "react";
 import { RiMenuLine, RiCloseLine } from "react-icons/ri";
 import { useTranslations } from "next-intl";
@@ -11,15 +11,28 @@ import { LocaleSwitcher } from "@/components/ui/LocaleSwitcher";
 export function Header() {
   const t = useTranslations("header");
   const [open, setOpen] = useState(false);
+  const pathname = usePathname();
+  const isHome = pathname === "/";
 
   return (
     <>
-      <header className="absolute top-7.5 left-0 right-0 z-50" role="banner">
+      <header
+        role="banner"
+        className={cn(
+          "left-0 right-0 z-50 transition-colors duration-300",
+          isHome
+            ? "absolute top-7.5"
+            : "fixed top-0 bg-white/95 backdrop-blur-sm border-b border-[#ebebeb]"
+        )}
+      >
         <div className="max-w-360 mx-auto px-7.5">
           <div className="flex items-center justify-between h-18 lg:h-21">
 
             <button
-              className="flex items-center gap-2.5 text-white group shrink-0"
+              className={cn(
+                "flex items-center gap-2.5 group shrink-0",
+                isHome ? "text-white" : "text-[#1a1a1a]"
+              )}
               onClick={() => setOpen(true)}
               aria-label="Открыть меню"
               aria-expanded={open}
@@ -100,7 +113,7 @@ export function Header() {
               ).map((key) => (
                 <li key={key}>
                   <Link
-                    href={`/${key === "about" ? "about" : key}`}
+                    href={`/${key}`}
                     className="block text-white/75 hover:text-white font-serif text-[26px] py-3 transition-colors duration-200"
                     onClick={() => setOpen(false)}
                   >
@@ -113,7 +126,7 @@ export function Header() {
 
           <div className="px-7.5 pb-10">
             <Link
-              href="/admissions/apply"
+              href="/admissions"
               className="block w-full text-center text-[11px] font-semibold tracking-widest uppercase text-white bg-accent hover:bg-accent-hover py-4 transition-colors duration-200"
               onClick={() => setOpen(false)}
             >

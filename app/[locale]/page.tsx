@@ -96,6 +96,7 @@ export default async function HomePage({
 
   return (
     <>
+      {/* Блок 1: Завязка и позиционирование */}
       <HeroSection />
       <CertificatesSection />
       <SchoolChoiceSection />

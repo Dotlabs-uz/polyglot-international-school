@@ -93,7 +93,7 @@ export function HeroSection() {
             className="mt-11 flex flex-col sm:flex-row items-center gap-4"
           >
             <Link
-              href="/admissions/apply"
+              href="/admissions"
               className="inline-block text-[11px] font-medium tracking-widest uppercase text-white border border-white/60 hover:border-white hover:bg-white/15 hover:backdrop-blur-md px-9 py-3.5 transition duration-300 w-full sm:w-auto text-center"
             >
               {t("cta1")}
