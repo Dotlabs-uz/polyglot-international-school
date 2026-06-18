@@ -1,5 +1,5 @@
 import { setRequestLocale } from "next-intl/server";
-import { CertificatesSection } from "@/components/sections/CertificatesSection";
+import { ResultsPageContent } from "@/components/pages/ResultsPageContent";
 import { SlideNav } from "@/components/layout/SlideNav";
 
 export default async function ResultsPage({
@@ -13,7 +13,7 @@ export default async function ResultsPage({
   return (
     <>
       <div className="min-h-svh flex flex-col pt-20 pb-14">
-        <CertificatesSection />
+        <ResultsPageContent />
       </div>
       <SlideNav current={9} />
     </>

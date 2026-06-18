@@ -1,5 +1,5 @@
 import { setRequestLocale } from "next-intl/server";
-import { FeaturesSection } from "@/components/sections/FeaturesSection";
+import { LifePageContent } from "@/components/pages/LifePageContent";
 import { SlideNav } from "@/components/layout/SlideNav";
 
 export default async function LifePage({
@@ -13,7 +13,7 @@ export default async function LifePage({
   return (
     <>
       <div className="min-h-svh flex flex-col pt-20 pb-14">
-        <FeaturesSection />
+        <LifePageContent />
       </div>
       <SlideNav current={11} />
     </>

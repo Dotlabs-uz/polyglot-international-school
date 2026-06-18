@@ -1,5 +1,5 @@
 import { setRequestLocale } from "next-intl/server";
-import { FounderSection } from "@/components/sections/FounderSection";
+import { FounderPageContent } from "@/components/pages/FounderPageContent";
 import { SlideNav } from "@/components/layout/SlideNav";
 
 export default async function FounderPage({
@@ -13,7 +13,7 @@ export default async function FounderPage({
   return (
     <>
       <div className="min-h-svh flex flex-col pt-20 pb-14">
-        <FounderSection />
+        <FounderPageContent />
       </div>
       <SlideNav current={12} />
     </>

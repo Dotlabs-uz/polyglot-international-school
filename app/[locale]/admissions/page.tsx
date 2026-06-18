@@ -1,5 +1,5 @@
 import { setRequestLocale } from "next-intl/server";
-import { EnrollmentSection } from "@/components/sections/EnrollmentSection";
+import { AdmissionsPageContent } from "@/components/pages/AdmissionsPageContent";
 import { SlideNav } from "@/components/layout/SlideNav";
 
 export default async function AdmissionsPage({
@@ -13,7 +13,7 @@ export default async function AdmissionsPage({
   return (
     <>
       <div className="min-h-svh flex flex-col pt-20 pb-14">
-        <EnrollmentSection />
+        <AdmissionsPageContent />
       </div>
       <SlideNav current={13} />
     </>

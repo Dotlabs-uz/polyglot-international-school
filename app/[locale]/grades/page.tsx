@@ -1,5 +1,5 @@
 import { setRequestLocale } from "next-intl/server";
-import { GradesSection } from "@/components/sections/GradesSection";
+import { GradesPageContent } from "@/components/pages/GradesPageContent";
 import { SlideNav } from "@/components/layout/SlideNav";
 
 export default async function GradesPage({
@@ -13,7 +13,7 @@ export default async function GradesPage({
   return (
     <>
       <div className="min-h-svh flex flex-col pt-20 pb-14">
-        <GradesSection />
+        <GradesPageContent />
       </div>
       <SlideNav current={8} />
     </>

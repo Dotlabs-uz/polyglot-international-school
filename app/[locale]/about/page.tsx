@@ -1,5 +1,5 @@
 import { setRequestLocale } from "next-intl/server";
-import { SchoolChoiceSection } from "@/components/sections/SchoolChoiceSection";
+import { AboutPageContent } from "@/components/pages/AboutPageContent";
 import { SlideNav } from "@/components/layout/SlideNav";
 
 export default async function AboutPage({
@@ -13,7 +13,7 @@ export default async function AboutPage({
   return (
     <>
       <div className="min-h-svh flex flex-col pt-20 pb-14">
-        <SchoolChoiceSection />
+        <AboutPageContent />
       </div>
       <SlideNav current={2} />
     </>

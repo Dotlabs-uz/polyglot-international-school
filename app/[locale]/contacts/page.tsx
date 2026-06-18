@@ -1,5 +1,5 @@
 import { setRequestLocale } from "next-intl/server";
-import { ContactsSection } from "@/components/sections/ContactsSection";
+import { ContactsPageContent } from "@/components/pages/ContactsPageContent";
 import { SlideNav } from "@/components/layout/SlideNav";
 
 export default async function ContactsPage({
@@ -13,7 +13,7 @@ export default async function ContactsPage({
   return (
     <>
       <div className="min-h-svh flex flex-col pt-20 pb-14">
-        <ContactsSection />
+        <ContactsPageContent />
       </div>
       <SlideNav current={14} />
     </>

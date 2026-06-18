@@ -1,5 +1,5 @@
 import { setRequestLocale } from "next-intl/server";
-import { ConsultingSection } from "@/components/sections/ConsultingSection";
+import { ConsultingPageContent } from "@/components/pages/ConsultingPageContent";
 import { SlideNav } from "@/components/layout/SlideNav";
 
 export default async function ConsultingPage({
@@ -13,7 +13,7 @@ export default async function ConsultingPage({
   return (
     <>
       <div className="min-h-svh flex flex-col pt-20 pb-14">
-        <ConsultingSection />
+        <ConsultingPageContent />
       </div>
       <SlideNav current={10} />
     </>

@@ -1,5 +1,5 @@
 import { setRequestLocale } from "next-intl/server";
-import { HealthLogisticsSection } from "@/components/sections/HealthLogisticsSection";
+import { HealthPageContent } from "@/components/pages/HealthPageContent";
 import { SlideNav } from "@/components/layout/SlideNav";
 
 export default async function HealthPage({
@@ -13,7 +13,7 @@ export default async function HealthPage({
   return (
     <>
       <div className="min-h-svh flex flex-col pt-20 pb-14">
-        <HealthLogisticsSection />
+        <HealthPageContent />
       </div>
       <SlideNav current={5} />
     </>
