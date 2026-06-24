@@ -18,9 +18,9 @@ export function HeroSection() {
   const [active, setActive] = useState(0);
 
   const slides = [
-    { image: "/hero.png", heading: t("heading"), subtext: t("subtext") },
-    { image: "/children.jpg", heading: t("heading2"), subtext: t("subtext2") },
-    { image: "/school3.png", heading: t("heading3"), subtext: t("subtext3") },
+    { image: "/facade-1.jpg", heading: t("heading"), subtext: t("subtext") },
+    { image: "/atrium-hall.jpg", heading: t("heading2"), subtext: t("subtext2") },
+    { image: "/campus-gate.jpg", heading: t("heading3"), subtext: t("subtext3") },
   ] as const;
 
   useEffect(() => {

@@ -108,6 +108,15 @@ export function Header() {
 
           <nav className="flex-1 px-7.5 py-8" aria-label="Меню разделов">
             <ul className="flex flex-col gap-0.5" role="list">
+              <li>
+                <Link
+                  href="/"
+                  className="block text-white/75 hover:text-white font-serif text-[26px] py-3 transition-colors duration-200"
+                  onClick={() => setOpen(false)}
+                >
+                  {t("nav.home")}
+                </Link>
+              </li>
               {(
                 ["about", "education", "campus", "life", "admissions", "contacts"] as const
               ).map((key) => (
@@ -126,7 +135,7 @@ export function Header() {
 
           <div className="px-7.5 pb-10">
             <Link
-              href="/admissions"
+              href="/apply"
               className="block w-full text-center text-[11px] font-semibold tracking-widest uppercase text-white bg-accent hover:bg-accent-hover py-4 transition-colors duration-200"
               onClick={() => setOpen(false)}
             >

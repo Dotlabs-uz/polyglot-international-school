@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useTranslations } from "next-intl";
 import { Reveal, RevealGroup, RevealItem } from "@/components/ui/Reveal";
 import { RiDoubleQuotesL, RiMedalLine, RiGroupLine } from "react-icons/ri";
@@ -38,6 +39,15 @@ export function FounderPageContent() {
           <div className="flex flex-col lg:flex-row gap-12 lg:gap-24">
             {/* Identity */}
             <Reveal className="lg:w-80 shrink-0" direction="left">
+              <div className="relative w-full aspect-4/3 overflow-hidden mb-6">
+                <Image
+                  src="/reception-hall.jpg"
+                  alt={t("founderName")}
+                  fill
+                  className="object-cover object-center"
+                  sizes="(max-width: 1024px) 100vw, 320px"
+                />
+              </div>
               <div className="inline-flex items-center justify-center w-16 h-16 bg-[#FC9A19]/15 mb-6">
                 <RiMedalLine size={32} className="text-[#FC9A19]" />
               </div>
@@ -110,6 +120,17 @@ export function FounderPageContent() {
             <p className="text-[#aaa] text-[15px] leading-[1.8] mb-12 max-w-2xl">
               {t("teamBody")}
             </p>
+          </Reveal>
+          <Reveal direction="up" className="mb-12">
+            <div className="relative w-full aspect-16/6 overflow-hidden">
+              <Image
+                src="/facade-3.jpg"
+                alt={t("teamHeading")}
+                fill
+                className="object-cover object-center"
+                sizes="100vw"
+              />
+            </div>
           </Reveal>
           <RevealGroup className="grid sm:grid-cols-2 md:grid-cols-3 gap-4" stagger={0.08}>
             {teamItems.map((item, i) => (

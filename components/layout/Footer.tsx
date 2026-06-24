@@ -79,7 +79,7 @@ export function Footer() {
               {t("enrollmentNote")}
             </p>
             <Link
-              href="/admissions"
+              href="/apply"
               className="inline-block text-[11px] font-semibold tracking-widest uppercase text-white bg-accent hover:bg-accent-hover px-6 py-3 transition-colors duration-200"
             >
               {t("applyBtn")}

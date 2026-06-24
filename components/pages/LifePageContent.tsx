@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useTranslations } from "next-intl";
 import { Reveal, RevealGroup, RevealItem } from "@/components/ui/Reveal";
 import { RiMicLine, RiFlightTakeoffLine, RiTrophyLine } from "react-icons/ri";
@@ -32,39 +33,66 @@ export function LifePageContent() {
           </h1>
         </Reveal>
         <Reveal delay={0.14}>
-          <p className="text-[#555] text-[16px] md:text-[18px] leading-[1.8] max-w-2xl">
+          <p className="text-[#555] text-[16px] md:text-[18px] leading-[1.8] max-w-2xl mb-12">
             {t("intro")}
           </p>
+        </Reveal>
+        <Reveal delay={0.2} direction="up">
+          <div className="relative w-full aspect-16/8 overflow-hidden">
+            <Image
+              src="/atrium-hall.jpg"
+              alt="Жизнь школы Polyglot International School"
+              fill
+              priority
+              className="object-cover object-center"
+              sizes="100vw"
+            />
+          </div>
         </Reveal>
       </section>
 
       {/* Friday Talk */}
       <section className="bg-[#1a1a1a]">
         <div className="max-w-360 mx-auto px-7.5 py-14 md:py-20">
-          <Reveal>
-            <div className="flex items-center gap-4 mb-6">
-              <RiMicLine size={28} className="text-[#FC9A19]" />
-              <span className="text-[#FC9A19] text-[11px] font-semibold uppercase tracking-widest">
-                {t("ftLabel")}
-              </span>
-            </div>
-            <h2 className="font-serif font-semibold text-white text-[26px] md:text-[38px] leading-[1.2] mb-6 max-w-2xl">
-              {t("ftHeading")}
-            </h2>
-            <p className="text-[#aaa] text-[15px] md:text-[16px] leading-[1.8] mb-12 max-w-2xl">
-              {t("ftBody")}
-            </p>
-          </Reveal>
-          <RevealGroup className="grid sm:grid-cols-2 gap-4" stagger={0.1}>
-            {ftItems.map((item, i) => (
-              <RevealItem key={i}>
-                <div className="flex items-start gap-4 bg-white/5 p-6">
-                  <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-[#FC9A19] shrink-0" />
-                  <p className="text-white/80 text-[14px] leading-snug">{item}</p>
+          <div className="flex flex-col lg:flex-row gap-12 lg:gap-20">
+            <Reveal className="lg:w-96 shrink-0" direction="left">
+              <div className="relative w-full aspect-4/3 overflow-hidden">
+                <Image
+                  src="/grand-lobby.jpg"
+                  alt={t("ftHeading")}
+                  fill
+                  className="object-cover object-center"
+                  sizes="(max-width: 1024px) 100vw, 384px"
+                />
+              </div>
+            </Reveal>
+            <div className="flex-1">
+              <Reveal>
+                <div className="flex items-center gap-4 mb-6">
+                  <RiMicLine size={28} className="text-[#FC9A19]" />
+                  <span className="text-[#FC9A19] text-[11px] font-semibold uppercase tracking-widest">
+                    {t("ftLabel")}
+                  </span>
                 </div>
-              </RevealItem>
-            ))}
-          </RevealGroup>
+                <h2 className="font-serif font-semibold text-white text-[26px] md:text-[38px] leading-[1.2] mb-6 max-w-2xl">
+                  {t("ftHeading")}
+                </h2>
+                <p className="text-[#aaa] text-[15px] md:text-[16px] leading-[1.8] mb-12 max-w-2xl">
+                  {t("ftBody")}
+                </p>
+              </Reveal>
+              <RevealGroup className="grid sm:grid-cols-2 gap-4" stagger={0.1}>
+                {ftItems.map((item, i) => (
+                  <RevealItem key={i}>
+                    <div className="flex items-start gap-4 bg-white/5 p-6">
+                      <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-[#FC9A19] shrink-0" />
+                      <p className="text-white/80 text-[14px] leading-snug">{item}</p>
+                    </div>
+                  </RevealItem>
+                ))}
+              </RevealGroup>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -112,18 +140,31 @@ export function LifePageContent() {
               {t("compHeading")}
             </h2>
           </Reveal>
-          <RevealGroup className="grid sm:grid-cols-2 gap-5" stagger={0.1}>
-            {competitions.map((comp, i) => (
-              <RevealItem key={i}>
-                <div className="flex items-start gap-4 bg-white p-6">
-                  <span className="font-serif font-bold text-[#FC9A19] text-[28px] leading-none shrink-0">
-                    {String(i + 1).padStart(2, "0")}
-                  </span>
-                  <p className="text-[#333] text-[15px] leading-[1.7] pt-1">{comp}</p>
-                </div>
-              </RevealItem>
-            ))}
-          </RevealGroup>
+          <div className="grid lg:grid-cols-2 gap-10 items-start">
+            <RevealGroup className="grid sm:grid-cols-2 gap-5" stagger={0.1}>
+              {competitions.map((comp, i) => (
+                <RevealItem key={i}>
+                  <div className="flex items-start gap-4 bg-white p-6">
+                    <span className="font-serif font-bold text-[#FC9A19] text-[28px] leading-none shrink-0">
+                      {String(i + 1).padStart(2, "0")}
+                    </span>
+                    <p className="text-[#333] text-[15px] leading-[1.7] pt-1">{comp}</p>
+                  </div>
+                </RevealItem>
+              ))}
+            </RevealGroup>
+            <Reveal direction="right">
+              <div className="relative w-full aspect-4/3 overflow-hidden">
+                <Image
+                  src="/sports-ground.jpg"
+                  alt={t("compHeading")}
+                  fill
+                  className="object-cover object-center"
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                />
+              </div>
+            </Reveal>
+          </div>
         </div>
       </section>
     </div>

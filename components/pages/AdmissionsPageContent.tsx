@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useTranslations } from "next-intl";
 import { Reveal, RevealGroup, RevealItem } from "@/components/ui/Reveal";
 import { Link } from "@/i18n/navigation";
@@ -27,9 +28,21 @@ export function AdmissionsPageContent() {
           </h1>
         </Reveal>
         <Reveal delay={0.14}>
-          <p className="text-[#555] text-[16px] md:text-[18px] leading-[1.8] max-w-2xl">
+          <p className="text-[#555] text-[16px] md:text-[18px] leading-[1.8] max-w-2xl mb-12">
             {t("intro")}
           </p>
+        </Reveal>
+        <Reveal delay={0.2} direction="up">
+          <div className="relative w-full aspect-16/8 overflow-hidden">
+            <Image
+              src="/reception-hall.jpg"
+              alt={t("heading")}
+              fill
+              priority
+              className="object-cover object-center"
+              sizes="100vw"
+            />
+          </div>
         </Reveal>
       </section>
 
@@ -146,7 +159,7 @@ export function AdmissionsPageContent() {
           </Reveal>
           <Reveal delay={0.1}>
             <Link
-              href="/contacts"
+              href="/apply"
               className="inline-flex items-center justify-center bg-white text-[#1a1a1a] font-semibold text-[13px] uppercase tracking-widest px-10 py-4 hover:bg-[#f0f0f0] transition-colors whitespace-nowrap"
             >
               {t("cta")}

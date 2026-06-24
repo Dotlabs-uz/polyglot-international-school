@@ -1,8 +1,11 @@
 "use client";
 
+import Image from "next/image";
 import { useTranslations } from "next-intl";
 import { Reveal, RevealGroup, RevealItem } from "@/components/ui/Reveal";
 import { RiFlaskLine, RiHeadphoneLine, RiRobot2Line, RiVideoLine } from "react-icons/ri";
+
+const techImages = ["/chemistry-lab.jpg", "/geography-classroom.jpg", "/lab-stem-2.jpg", "/lab-stem-4.jpg"];
 
 export function EducationPageContent() {
   const t = useTranslations("educationPage");
@@ -86,7 +89,7 @@ export function EducationPageContent() {
 
       {/* Morning / Afternoon description */}
       <section className="max-w-360 mx-auto px-7.5 py-14 md:py-20">
-        <div className="grid md:grid-cols-2 gap-10">
+        <div className="grid md:grid-cols-2 gap-10 mb-14">
           <Reveal direction="left">
             <div className="border-l-4 border-[#FC9A19] pl-7">
               <h3 className="font-serif font-semibold text-[#1a1a1a] text-[22px] md:text-[28px] leading-[1.2] mb-5">
@@ -104,6 +107,17 @@ export function EducationPageContent() {
             </div>
           </Reveal>
         </div>
+        <Reveal direction="up">
+          <div className="relative w-full aspect-16/6 overflow-hidden">
+            <Image
+              src="/branded-corridor.jpg"
+              alt="Учебный корпус Polyglot International School"
+              fill
+              className="object-cover object-center"
+              sizes="100vw"
+            />
+          </div>
+        </Reveal>
       </section>
 
       {/* Tech base */}
@@ -120,10 +134,21 @@ export function EducationPageContent() {
           <RevealGroup className="grid sm:grid-cols-2 md:grid-cols-4 gap-6 mt-10" stagger={0.1}>
             {tech.map((item, i) => (
               <RevealItem key={i}>
-                <div className="bg-white/5 p-7 h-full hover:bg-white/10 transition-colors">
-                  <item.Icon size={30} className="text-[#FC9A19] mb-5" />
-                  <h4 className="font-semibold text-white text-[15px] mb-3">{item.name}</h4>
-                  <p className="text-[#888] text-[13px] leading-[1.7]">{item.desc}</p>
+                <div className="bg-white/5 overflow-hidden h-full hover:bg-white/10 transition-colors">
+                  <div className="relative w-full aspect-4/3 overflow-hidden">
+                    <Image
+                      src={techImages[i]}
+                      alt={item.name}
+                      fill
+                      className="object-cover object-center"
+                      sizes="(max-width: 768px) 50vw, 25vw"
+                    />
+                  </div>
+                  <div className="p-7">
+                    <item.Icon size={26} className="text-[#FC9A19] mb-4" />
+                    <h4 className="font-semibold text-white text-[15px] mb-3">{item.name}</h4>
+                    <p className="text-[#888] text-[13px] leading-[1.7]">{item.desc}</p>
+                  </div>
                 </div>
               </RevealItem>
             ))}

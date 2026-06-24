@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useTranslations } from "next-intl";
 import { Reveal, RevealGroup, RevealItem } from "@/components/ui/Reveal";
 
@@ -45,9 +46,21 @@ export function AboutPageContent() {
           </h1>
         </Reveal>
         <Reveal delay={0.14}>
-          <p className="text-[#555] text-[16px] md:text-[18px] leading-[1.8] max-w-2xl">
+          <p className="text-[#555] text-[16px] md:text-[18px] leading-[1.8] max-w-2xl mb-12">
             {t("intro")}
           </p>
+        </Reveal>
+        <Reveal delay={0.2} direction="up">
+          <div className="relative w-full aspect-16/8 overflow-hidden">
+            <Image
+              src="/facade-1.jpg"
+              alt="Polyglot International School — здание школы"
+              fill
+              priority
+              className="object-cover object-center"
+              sizes="100vw"
+            />
+          </div>
         </Reveal>
       </section>
 
@@ -76,7 +89,7 @@ export function AboutPageContent() {
                       <p className="text-[#555] text-[15px] md:text-[16px] leading-[1.8] mb-8">
                         {s.body}
                       </p>
-                      <ul className="grid sm:grid-cols-2 gap-3">
+                      <ul className="grid sm:grid-cols-2 gap-3 mb-8">
                         {s.details.map((d, j) => (
                           <li
                             key={j}
@@ -90,6 +103,17 @@ export function AboutPageContent() {
                           </li>
                         ))}
                       </ul>
+                      {i === 2 && (
+                        <div className="relative w-full aspect-16/8 overflow-hidden">
+                          <Image
+                            src="/lab-stem-2.jpg"
+                            alt="STEM-лаборатория Polyglot International School"
+                            fill
+                            className="object-cover object-center"
+                            sizes="(max-width: 1024px) 100vw, 70vw"
+                          />
+                        </div>
+                      )}
                     </div>
                   </div>
                 </div>

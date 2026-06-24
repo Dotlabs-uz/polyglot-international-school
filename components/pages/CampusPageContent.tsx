@@ -3,22 +3,22 @@
 import Image from "next/image";
 import { useTranslations } from "next-intl";
 import { Reveal, RevealGroup, RevealItem } from "@/components/ui/Reveal";
-import {
-  RiBuildingLine,
-  RiShieldLine,
-  RiFlaskLine,
-  RiHeadphoneLine,
-  RiFootballLine,
-  RiMicLine,
-} from "react-icons/ri";
+import { RiShieldLine } from "react-icons/ri";
 
-const spaceIcons = [
-  RiFlaskLine,
-  RiHeadphoneLine,
-  RiMicLine,
-  RiMicLine,
-  RiFootballLine,
-  RiBuildingLine,
+const spaceImages = [
+  "/chemistry-lab.jpg",
+  "/lab-stem-1.jpg",
+  "/lab-stem-3.jpg",
+  "/geography-classroom.jpg",
+  "/sports-ground.jpg",
+  "/grand-lobby.jpg",
+];
+
+const gallery = [
+  { src: "/atrium-hall.jpg", alt: "Атриум кампуса" },
+  { src: "/reception-hall.jpg", alt: "Холл с ресепшеном" },
+  { src: "/branded-corridor.jpg", alt: "Коридор кампуса" },
+  { src: "/grand-lobby.jpg", alt: "Главный холл" },
 ];
 
 export function CampusPageContent() {
@@ -46,24 +46,42 @@ export function CampusPageContent() {
 
   return (
     <div className="flex-1 bg-white">
-      {/* Hero */}
+      {/* Hero with facade image */}
+      <section className="relative">
+        <div className="relative w-full aspect-16/9 md:aspect-21/9 overflow-hidden">
+          <Image
+            src="/facade-2.jpg"
+            alt="Polyglot International School — фасад здания"
+            fill
+            priority
+            className="object-cover object-center"
+            sizes="100vw"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-black/10" />
+        </div>
+        <div className="absolute inset-0 flex flex-col justify-end">
+          <div className="max-w-360 mx-auto w-full px-7.5 pb-10 md:pb-16">
+            <Reveal>
+              <span className="inline-block text-[#FC9A19] text-[11px] font-semibold uppercase tracking-widest mb-5">
+                {t("label")}
+              </span>
+            </Reveal>
+            <Reveal delay={0.08}>
+              <h1 className="font-serif font-semibold text-white leading-[1.1] text-[28px] md:text-[44px] lg:text-[54px] max-w-3xl mb-3">
+                {t("heading")}
+              </h1>
+            </Reveal>
+            <Reveal delay={0.12}>
+              <p className="text-[#FC9A19] font-semibold text-[15px] md:text-[18px]">
+                {t("subheading")}
+              </p>
+            </Reveal>
+          </div>
+        </div>
+      </section>
+
       <section className="max-w-360 mx-auto px-7.5 pt-10 pb-14 md:pt-14 md:pb-20">
         <Reveal>
-          <span className="inline-block text-[#FC9A19] text-[11px] font-semibold uppercase tracking-widest mb-5">
-            {t("label")}
-          </span>
-        </Reveal>
-        <Reveal delay={0.08}>
-          <h1 className="font-serif font-semibold text-[#1a1a1a] leading-[1.1] text-[32px] md:text-[46px] lg:text-[58px] max-w-3xl mb-4">
-            {t("heading")}
-          </h1>
-        </Reveal>
-        <Reveal delay={0.12}>
-          <p className="text-[#FC9A19] font-semibold text-[16px] md:text-[18px] mb-8">
-            {t("subheading")}
-          </p>
-        </Reveal>
-        <Reveal delay={0.18}>
           <p className="text-[#555] text-[16px] leading-[1.8] max-w-2xl">{t("body")}</p>
         </Reveal>
       </section>
@@ -86,18 +104,24 @@ export function CampusPageContent() {
         </RevealGroup>
       </section>
 
-      {/* Campus image */}
-      <Reveal direction="up" className="max-w-360 mx-auto px-7.5 py-14 md:py-20">
-        <div className="relative w-full aspect-16/7 overflow-hidden">
-          <Image
-            src="/campus.png"
-            alt="Polyglot campus"
-            fill
-            className="object-cover object-center"
-            sizes="100vw"
-          />
-        </div>
-      </Reveal>
+      {/* Interior gallery */}
+      <section className="max-w-360 mx-auto px-7.5 py-14 md:py-20">
+        <RevealGroup className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4" stagger={0.08}>
+          {gallery.map((img, i) => (
+            <RevealItem key={i}>
+              <div className="relative w-full aspect-square overflow-hidden">
+                <Image
+                  src={img.src}
+                  alt={img.alt}
+                  fill
+                  className="object-cover object-center hover:scale-105 transition-transform duration-500"
+                  sizes="(max-width: 768px) 50vw, 25vw"
+                />
+              </div>
+            </RevealItem>
+          ))}
+        </RevealGroup>
+      </section>
 
       {/* Security */}
       <section className="bg-[#1a1a1a]">
@@ -140,18 +164,25 @@ export function CampusPageContent() {
           </h2>
         </Reveal>
         <RevealGroup className="grid sm:grid-cols-2 md:grid-cols-3 gap-6" stagger={0.09}>
-          {spaces.map((sp, i) => {
-            const Icon = spaceIcons[i] ?? RiBuildingLine;
-            return (
-              <RevealItem key={i}>
-                <div className="border border-[#e8e8e8] p-7 h-full hover:border-[#FC9A19] transition-colors">
-                  <Icon size={32} className="text-[#FC9A19] mb-5" />
+          {spaces.map((sp, i) => (
+            <RevealItem key={i}>
+              <div className="group border border-[#e8e8e8] overflow-hidden h-full hover:border-[#FC9A19] transition-colors">
+                <div className="relative w-full aspect-4/3 overflow-hidden">
+                  <Image
+                    src={spaceImages[i]}
+                    alt={sp.name}
+                    fill
+                    className="object-cover object-center group-hover:scale-105 transition-transform duration-500"
+                    sizes="(max-width: 768px) 100vw, 33vw"
+                  />
+                </div>
+                <div className="p-6">
                   <h3 className="font-semibold text-[#1a1a1a] text-[16px] mb-3">{sp.name}</h3>
                   <p className="text-[#777] text-[14px] leading-[1.7]">{sp.desc}</p>
                 </div>
-              </RevealItem>
-            );
-          })}
+              </div>
+            </RevealItem>
+          ))}
         </RevealGroup>
       </section>
     </div>

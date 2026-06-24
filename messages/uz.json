@@ -4,6 +4,7 @@
     "login": "KIRISH",
     "apply": "ARIZA BERISH",
     "nav": {
+      "home": "Bosh sahifa",
       "about": "Maktab haqida",
       "education": "Ta'lim",
       "campus": "Kampus",
@@ -347,6 +348,13 @@
     "team3": "Ona tilli so'zlovchilar: ingliz, xitoy, nemis",
     "team4": "O'qituvchi tarkibi uchun yillik xalqaro malaka oshirish",
     "team5": "Cambridge metodologik talablari tizimida o'qituvchilar"
+  },
+  "applyPage": {
+    "label": "Ariza",
+    "heading": "Qabul uchun ariza qoldiring",
+    "intro": "Qisqa formani to'ldiring — qabul komissiyasi kuratori bir ish kuni ichida siz bilan bog'lanib, tashrif sanasini kelishadi va qabul bo'yicha savollarga javob beradi.",
+    "phoneLabel": "Yoki bizga to'g'ridan-to'g'ri qo'ng'iroq qiling",
+    "phone": "+998 90 470 30 00"
   },
   "admissionsPage": {
     "label": "Qabul 2026–2027",

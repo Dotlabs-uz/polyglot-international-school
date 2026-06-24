@@ -106,7 +106,7 @@ export function CampusSection() {
       <Reveal direction="up" className="max-w-360 mx-auto px-7.5 pb-16 md:pb-20">
         <div className="relative w-full aspect-16/7 overflow-hidden">
           <Image
-            src="/campus.png"
+            src="/facade-5.jpg"
             alt={t("imageAlt")}
             fill
             className="object-cover object-center"

@@ -4,6 +4,7 @@
     "login": "LOGIN",
     "apply": "APPLY",
     "nav": {
+      "home": "Home",
       "about": "About Us",
       "education": "Education",
       "campus": "Campus",
@@ -349,6 +350,13 @@
     "team3": "Native speakers: English, Chinese, German",
     "team4": "Annual international professional development for teachers",
     "team5": "Teachers following Cambridge methodological requirements"
+  },
+  "applyPage": {
+    "label": "Application",
+    "heading": "Submit your application",
+    "intro": "Fill out a short form — an admissions coordinator will contact you within one business day to schedule a campus visit and answer your questions.",
+    "phoneLabel": "Or call us directly",
+    "phone": "+998 90 470 30 00"
   },
   "admissionsPage": {
     "label": "Admissions 2026–2027",

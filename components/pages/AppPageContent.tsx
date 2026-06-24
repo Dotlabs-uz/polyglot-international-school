@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import { useTranslations } from "next-intl";
 import { motion, AnimatePresence } from "framer-motion";
 import { Reveal, RevealGroup, RevealItem } from "@/components/ui/Reveal";
@@ -13,6 +14,14 @@ import {
 } from "react-icons/ri";
 
 const EASE = [0.22, 1, 0.36, 1] as const;
+
+const featureImages = [
+  "/campus-gate.jpg",
+  "/branded-corridor.jpg",
+  "/atrium-hall.jpg",
+  "/grand-lobby.jpg",
+  "/reception-hall.jpg",
+];
 
 export function AppPageContent() {
   const t = useTranslations("appPage");
@@ -118,6 +127,15 @@ export function AppPageContent() {
               className="flex flex-col lg:flex-row gap-12 lg:gap-24"
             >
               <div className="lg:w-96 shrink-0">
+                <div className="relative w-full aspect-4/3 overflow-hidden mb-6">
+                  <Image
+                    src={featureImages[active]}
+                    alt={features[active].title}
+                    fill
+                    className="object-cover object-center"
+                    sizes="(max-width: 1024px) 100vw, 384px"
+                  />
+                </div>
                 <div className="inline-flex items-center justify-center w-16 h-16 bg-[#FC9A19]/15 mb-6">
                   {(() => {
                     const Icon = features[active].Icon;

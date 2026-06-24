@@ -15,9 +15,9 @@ export function FeaturesSection() {
   const t = useTranslations("features");
 
   const cards = [
-    { image: "/frendly1.jpg", alt: t("card1Alt"), title: t("card1Title"), body: t("card1Body") },
-    { image: "/frendly2.png", alt: t("card2Alt"), title: t("card2Title"), body: t("card2Body") },
-    { image: "/frendly3.png", alt: t("card3Alt"), title: t("card3Title"), body: t("card3Body") },
+    { image: "/lab-stem-4.jpg", alt: t("card1Alt"), title: t("card1Title"), body: t("card1Body") },
+    { image: "/lab-stem-1.jpg", alt: t("card2Alt"), title: t("card2Title"), body: t("card2Body") },
+    { image: "/geography-classroom.jpg", alt: t("card3Alt"), title: t("card3Title"), body: t("card3Body") },
   ] as const;
 
   return (

@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useTranslations } from "next-intl";
 import { Reveal, RevealGroup, RevealItem } from "@/components/ui/Reveal";
 import { RiWindyLine, RiRestaurantLine, RiCarLine } from "react-icons/ri";
@@ -15,6 +16,7 @@ export function HealthPageContent() {
       facts: [t("airFact1"), t("airFact2"), t("airFact3"), t("airFact4")],
       Icon: RiWindyLine,
       accent: "#2D9CDB",
+      image: "/geography-classroom.jpg",
     },
     {
       label: t("foodLabel"),
@@ -23,6 +25,7 @@ export function HealthPageContent() {
       facts: [t("foodFact1"), t("foodFact2"), t("foodFact3"), t("foodFact4")],
       Icon: RiRestaurantLine,
       accent: "#27AE60",
+      image: "/atrium-hall.jpg",
     },
     {
       label: t("transferLabel"),
@@ -31,6 +34,7 @@ export function HealthPageContent() {
       facts: [t("transferFact1"), t("transferFact2"), t("transferFact3"), t("transferFact4")],
       Icon: RiCarLine,
       accent: "#FC9A19",
+      image: "/campus-entrance.jpg",
     },
   ];
 
@@ -65,6 +69,15 @@ export function HealthPageContent() {
             <div className="flex flex-col lg:flex-row lg:gap-24 gap-10">
               {/* Left */}
               <Reveal className="lg:w-80 shrink-0" direction="left">
+                <div className="relative w-full aspect-4/3 overflow-hidden mb-6">
+                  <Image
+                    src={sec.image}
+                    alt={sec.title}
+                    fill
+                    className="object-cover object-center"
+                    sizes="(max-width: 1024px) 100vw, 320px"
+                  />
+                </div>
                 <div
                   className="inline-flex items-center justify-center w-16 h-16 mb-6"
                   style={{ backgroundColor: `${sec.accent}18` }}

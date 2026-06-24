@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useTranslations } from "next-intl";
 import { Reveal, RevealGroup, RevealItem } from "@/components/ui/Reveal";
 
@@ -29,9 +30,21 @@ export function ChallengesPageContent() {
           </h1>
         </Reveal>
         <Reveal delay={0.14}>
-          <p className="text-[#555] text-[16px] md:text-[18px] leading-[1.8] max-w-2xl">
+          <p className="text-[#555] text-[16px] md:text-[18px] leading-[1.8] max-w-2xl mb-12">
             {t("intro")}
           </p>
+        </Reveal>
+        <Reveal delay={0.2} direction="up">
+          <div className="relative w-full aspect-16/8 overflow-hidden">
+            <Image
+              src="/geography-classroom.jpg"
+              alt={t("heading")}
+              fill
+              priority
+              className="object-cover object-center"
+              sizes="100vw"
+            />
+          </div>
         </Reveal>
       </section>
 
