@@ -15,7 +15,7 @@ export function ContactsPageContent() {
       {/* Hero */}
       <section className="max-w-360 mx-auto px-7.5 pt-10 pb-14 md:pt-14 md:pb-20">
         <Reveal>
-          <span className="inline-block text-[#FC9A19] text-[11px] font-semibold uppercase tracking-widest mb-5">
+          <span className="inline-block text-[#C4911E] text-[11px] font-semibold uppercase tracking-widest mb-5">
             {t("label")}
           </span>
         </Reveal>
@@ -49,8 +49,8 @@ export function ContactsPageContent() {
           <div className="grid md:grid-cols-2 gap-8 mb-12">
             {/* Left: visit */}
             <Reveal direction="left">
-              <div className="bg-[#1a1a1a] p-10 h-full flex flex-col">
-                <span className="inline-block text-[#FC9A19] text-[11px] font-semibold uppercase tracking-widest mb-5">
+              <div className="bg-[#142444] p-10 h-full flex flex-col">
+                <span className="inline-block text-[#C4911E] text-[11px] font-semibold uppercase tracking-widest mb-5">
                   {t("visitLabel")}
                 </span>
                 <p className="text-[#aaa] text-[15px] leading-[1.8] flex-1 mb-10">
@@ -58,7 +58,7 @@ export function ContactsPageContent() {
                 </p>
                 <a
                   href={`tel:${t("phone").replace(/\s/g, "")}`}
-                  className="inline-flex items-center justify-center bg-[#FC9A19] text-white font-semibold text-[13px] uppercase tracking-widest px-10 py-4 hover:bg-[#e8890a] transition-colors w-full text-center"
+                  className="inline-flex items-center justify-center bg-[#C4911E] text-white font-semibold text-[13px] uppercase tracking-widest px-10 py-4 hover:bg-[#D4A32E] transition-colors w-full text-center"
                 >
                   {t("cta")}
                 </a>
@@ -70,8 +70,8 @@ export function ContactsPageContent() {
               <div className="flex flex-col gap-6">
                 {/* Phone */}
                 <div className="bg-white p-7 flex items-start gap-5">
-                  <div className="w-12 h-12 flex items-center justify-center bg-[#FC9A19]/10 shrink-0">
-                    <RiPhoneLine size={22} className="text-[#FC9A19]" />
+                  <div className="w-12 h-12 flex items-center justify-center bg-[#C4911E]/10 shrink-0">
+                    <RiPhoneLine size={22} className="text-[#C4911E]" />
                   </div>
                   <div>
                     <p className="text-[12px] font-semibold uppercase tracking-widest text-[#888] mb-1">
@@ -79,7 +79,7 @@ export function ContactsPageContent() {
                     </p>
                     <a
                       href={`tel:${t("phone").replace(/\s/g, "")}`}
-                      className="text-[#1a1a1a] font-semibold text-[18px] hover:text-[#FC9A19] transition-colors"
+                      className="text-[#1a1a1a] font-semibold text-[18px] hover:text-[#C4911E] transition-colors"
                     >
                       {t("phone")}
                     </a>
@@ -88,8 +88,8 @@ export function ContactsPageContent() {
 
                 {/* Email */}
                 <div className="bg-white p-7 flex items-start gap-5">
-                  <div className="w-12 h-12 flex items-center justify-center bg-[#FC9A19]/10 shrink-0">
-                    <RiMailLine size={22} className="text-[#FC9A19]" />
+                  <div className="w-12 h-12 flex items-center justify-center bg-[#C4911E]/10 shrink-0">
+                    <RiMailLine size={22} className="text-[#C4911E]" />
                   </div>
                   <div>
                     <p className="text-[12px] font-semibold uppercase tracking-widest text-[#888] mb-1">
@@ -97,7 +97,7 @@ export function ContactsPageContent() {
                     </p>
                     <a
                       href={`mailto:${t("email")}`}
-                      className="text-[#1a1a1a] font-semibold text-[16px] hover:text-[#FC9A19] transition-colors"
+                      className="text-[#1a1a1a] font-semibold text-[16px] hover:text-[#C4911E] transition-colors"
                     >
                       {t("email")}
                     </a>
@@ -106,8 +106,8 @@ export function ContactsPageContent() {
 
                 {/* Address */}
                 <div className="bg-white p-7 flex items-start gap-5">
-                  <div className="w-12 h-12 flex items-center justify-center bg-[#FC9A19]/10 shrink-0">
-                    <RiMapPinLine size={22} className="text-[#FC9A19]" />
+                  <div className="w-12 h-12 flex items-center justify-center bg-[#C4911E]/10 shrink-0">
+                    <RiMapPinLine size={22} className="text-[#C4911E]" />
                   </div>
                   <div>
                     <p className="text-[12px] font-semibold uppercase tracking-widest text-[#888] mb-1">
@@ -124,7 +124,7 @@ export function ContactsPageContent() {
           <Reveal>
             <div className="bg-white p-8 md:p-10">
               <div className="flex items-center gap-4 mb-6">
-                <RiTimeLine size={22} className="text-[#FC9A19]" />
+                <RiTimeLine size={22} className="text-[#C4911E]" />
                 <span className="text-[12px] font-semibold uppercase tracking-widest text-[#888]">
                   {t("hoursLabel")}
                 </span>
@@ -148,7 +148,7 @@ export function ContactsPageContent() {
             href={t("mapUrl")}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-3 text-[#FC9A19] font-semibold text-[14px] uppercase tracking-widest hover:underline"
+            className="inline-flex items-center gap-3 text-[#C4911E] font-semibold text-[14px] uppercase tracking-widest hover:underline"
           >
             <RiMapPinLine size={18} />
             {t("mapLabel")}

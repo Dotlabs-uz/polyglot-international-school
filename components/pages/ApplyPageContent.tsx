@@ -13,7 +13,7 @@ export function ApplyPageContent() {
     <div className="flex-1 bg-white">
       <section className="max-w-360 mx-auto px-7.5 pt-10 pb-14 md:pt-14 md:pb-20">
         <Reveal>
-          <span className="inline-block text-[#FC9A19] text-[11px] font-semibold uppercase tracking-widest mb-5">
+          <span className="inline-block text-[#C4911E] text-[11px] font-semibold uppercase tracking-widest mb-5">
             {t("label")}
           </span>
         </Reveal>
@@ -38,11 +38,11 @@ export function ApplyPageContent() {
           </Reveal>
           <Reveal delay={0.1}>
             <div className="flex items-center justify-center gap-3 mt-10 text-[#555]">
-              <RiPhoneLine size={18} className="text-[#FC9A19]" />
+              <RiPhoneLine size={18} className="text-[#C4911E]" />
               <span className="text-[14px]">{t("phoneLabel")}:</span>
               <a
                 href={`tel:${t("phone").replace(/\s/g, "")}`}
-                className="text-[#1a1a1a] font-semibold text-[15px] hover:text-[#FC9A19] transition-colors"
+                className="text-[#1a1a1a] font-semibold text-[15px] hover:text-[#C4911E] transition-colors"
               >
                 {t("phone")}
               </a>

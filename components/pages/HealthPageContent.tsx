@@ -15,7 +15,7 @@ export function HealthPageContent() {
       body: t("airBody"),
       facts: [t("airFact1"), t("airFact2"), t("airFact3"), t("airFact4")],
       Icon: RiWindyLine,
-      accent: "#2D9CDB",
+      accent: "#142444",
       image: "/geography-classroom.jpg",
     },
     {
@@ -24,7 +24,7 @@ export function HealthPageContent() {
       body: t("foodBody"),
       facts: [t("foodFact1"), t("foodFact2"), t("foodFact3"), t("foodFact4")],
       Icon: RiRestaurantLine,
-      accent: "#27AE60",
+      accent: "#C4911E",
       image: "/atrium-hall.jpg",
     },
     {
@@ -33,7 +33,7 @@ export function HealthPageContent() {
       body: t("transferBody"),
       facts: [t("transferFact1"), t("transferFact2"), t("transferFact3"), t("transferFact4")],
       Icon: RiCarLine,
-      accent: "#FC9A19",
+      accent: "#142444",
       image: "/campus-entrance.jpg",
     },
   ];
@@ -43,7 +43,7 @@ export function HealthPageContent() {
       {/* Hero */}
       <section className="max-w-360 mx-auto px-7.5 pt-10 pb-14 md:pt-14 md:pb-20">
         <Reveal>
-          <span className="inline-block text-[#FC9A19] text-[11px] font-semibold uppercase tracking-widest mb-5">
+          <span className="inline-block text-[#C4911E] text-[11px] font-semibold uppercase tracking-widest mb-5">
             {t("label")}
           </span>
         </Reveal>

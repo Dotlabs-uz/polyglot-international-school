@@ -95,9 +95,13 @@ export const metadata: Metadata = {
     },
   },
   icons: {
-    icon: "/logo_header.png",
-    shortcut: "/logo_header.png",
-    apple: "/logo_header.png",
+    icon: [
+      { url: "/favicon.ico", sizes: "any" },
+      { url: "/icon-192.png", type: "image/png", sizes: "192x192" },
+      { url: "/icon-512.png", type: "image/png", sizes: "512x512" },
+    ],
+    shortcut: "/favicon.ico",
+    apple: "/apple-touch-icon.png",
   },
   manifest: "/manifest.json",
   other: {

@@ -13,21 +13,21 @@ export function AboutPageContent() {
       title: t("s1Title"),
       body: t("s1Body"),
       details: [t("s1d1"), t("s1d2"), t("s1d3"), t("s1d4")],
-      accent: "#FC9A19",
+      accent: "#C4911E",
     },
     {
       label: t("s2Label"),
       title: t("s2Title"),
       body: t("s2Body"),
       details: [t("s2d1"), t("s2d2"), t("s2d3"), t("s2d4")],
-      accent: "#1a1a1a",
+      accent: "#142444",
     },
     {
       label: t("s3Label"),
       title: t("s3Title"),
       body: t("s3Body"),
       details: [t("s3d1"), t("s3d2"), t("s3d3"), t("s3d4")],
-      accent: "#FC9A19",
+      accent: "#C4911E",
     },
   ];
 
@@ -36,7 +36,7 @@ export function AboutPageContent() {
       {/* Hero */}
       <section className="max-w-360 mx-auto px-7.5 pt-10 pb-14 md:pt-14 md:pb-20">
         <Reveal>
-          <span className="inline-block text-[#FC9A19] text-[11px] font-semibold uppercase tracking-widest mb-5">
+          <span className="inline-block text-[#C4911E] text-[11px] font-semibold uppercase tracking-widest mb-5">
             {t("label")}
           </span>
         </Reveal>
@@ -127,8 +127,8 @@ export function AboutPageContent() {
       {/* Closing */}
       <section className="max-w-360 mx-auto px-7.5 py-14 md:py-20">
         <Reveal>
-          <div className="border-l-4 border-[#FC9A19] pl-7">
-            <span className="block text-[11px] font-semibold uppercase tracking-widest text-[#FC9A19] mb-4">
+          <div className="border-l-4 border-[#C4911E] pl-7">
+            <span className="block text-[11px] font-semibold uppercase tracking-widest text-[#C4911E] mb-4">
               {t("closingLabel")}
             </span>
             <p className="font-serif text-[#1a1a1a] text-[20px] md:text-[26px] leading-[1.5] max-w-3xl">

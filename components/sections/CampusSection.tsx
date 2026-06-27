@@ -16,7 +16,7 @@ import type { IconType } from "react-icons";
 import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel";
 import { Reveal } from "@/components/ui/Reveal";
 
-const ACTIVE_COLOR = "#FC9A19";
+const ACTIVE_COLOR = "#C4911E";
 const easeOut = [0.22, 1, 0.36, 1] as const;
 
 export function CampusSection() {

@@ -62,7 +62,7 @@ export function CampusPageContent() {
         <div className="absolute inset-0 flex flex-col justify-end">
           <div className="max-w-360 mx-auto w-full px-7.5 pb-10 md:pb-16">
             <Reveal>
-              <span className="inline-block text-[#FC9A19] text-[11px] font-semibold uppercase tracking-widest mb-5">
+              <span className="inline-block text-[#C4911E] text-[11px] font-semibold uppercase tracking-widest mb-5">
                 {t("label")}
               </span>
             </Reveal>
@@ -72,7 +72,7 @@ export function CampusPageContent() {
               </h1>
             </Reveal>
             <Reveal delay={0.12}>
-              <p className="text-[#FC9A19] font-semibold text-[15px] md:text-[18px]">
+              <p className="text-[#C4911E] font-semibold text-[15px] md:text-[18px]">
                 {t("subheading")}
               </p>
             </Reveal>
@@ -87,7 +87,7 @@ export function CampusPageContent() {
       </section>
 
       {/* Stats bar */}
-      <section className="bg-[#FC9A19]">
+      <section className="bg-[#C4911E]">
         <RevealGroup
           className="max-w-360 mx-auto px-7.5 py-10 md:py-14 grid grid-cols-2 md:grid-cols-4 gap-8"
           stagger={0.1}
@@ -124,12 +124,12 @@ export function CampusPageContent() {
       </section>
 
       {/* Security */}
-      <section className="bg-[#1a1a1a]">
+      <section className="bg-[#142444]">
         <div className="max-w-360 mx-auto px-7.5 py-14 md:py-20">
           <Reveal>
             <div className="flex items-center gap-4 mb-10">
-              <RiShieldLine size={32} className="text-[#FC9A19]" />
-              <span className="inline-block text-[#FC9A19] text-[11px] font-semibold uppercase tracking-widest">
+              <RiShieldLine size={32} className="text-[#C4911E]" />
+              <span className="inline-block text-[#C4911E] text-[11px] font-semibold uppercase tracking-widest">
                 {t("secLabel")}
               </span>
             </div>
@@ -144,7 +144,7 @@ export function CampusPageContent() {
             {security.map((item, i) => (
               <RevealItem key={i}>
                 <div className="flex items-start gap-3 bg-white/5 p-5">
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#FC9A19] mt-2 shrink-0" />
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#C4911E] mt-2 shrink-0" />
                   <p className="text-white/80 text-[14px] leading-snug">{item}</p>
                 </div>
               </RevealItem>
@@ -156,7 +156,7 @@ export function CampusPageContent() {
       {/* Spaces */}
       <section className="max-w-360 mx-auto px-7.5 py-14 md:py-20">
         <Reveal>
-          <span className="inline-block text-[#FC9A19] text-[11px] font-semibold uppercase tracking-widest mb-5">
+          <span className="inline-block text-[#C4911E] text-[11px] font-semibold uppercase tracking-widest mb-5">
             {t("spacesLabel")}
           </span>
           <h2 className="font-serif font-semibold text-[#1a1a1a] text-[28px] md:text-[38px] leading-[1.2] mb-12">
@@ -166,7 +166,7 @@ export function CampusPageContent() {
         <RevealGroup className="grid sm:grid-cols-2 md:grid-cols-3 gap-6" stagger={0.09}>
           {spaces.map((sp, i) => (
             <RevealItem key={i}>
-              <div className="group border border-[#e8e8e8] overflow-hidden h-full hover:border-[#FC9A19] transition-colors">
+              <div className="group border border-[#e8e8e8] overflow-hidden h-full hover:border-[#C4911E] transition-colors">
                 <div className="relative w-full aspect-4/3 overflow-hidden">
                   <Image
                     src={spaceImages[i]}

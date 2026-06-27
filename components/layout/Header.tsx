@@ -46,15 +46,15 @@ export function Header() {
 
             <Link
               href="/"
-              className="absolute left-1/2 -translate-x-1/2"
+              className="absolute left-1/2 -translate-x-1/2 flex items-center"
               aria-label="Polyglot International School — главная страница"
             >
               <Image
-                src="/logo_header.png"
+                src="/logo_header_full.png"
                 alt="Polyglot International School — премиальная частная школа в Самарканде"
-                width={54}
-                height={54}
-                className="object-contain"
+                width={233}
+                height={50}
+                className="object-contain h-10 lg:h-12 w-auto"
                 priority
               />
             </Link>

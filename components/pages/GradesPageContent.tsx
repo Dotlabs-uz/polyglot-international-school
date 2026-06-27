@@ -23,7 +23,7 @@ export function GradesPageContent() {
       skills: [t("pS1"), t("pS2"), t("pS3"), t("pS4"), t("pS5"), t("pS6")],
       outcomeLabel: t("pOutcomeLabel"),
       outcome: t("pOutcome"),
-      color: "#27AE60",
+      color: "#142444",
     },
     {
       label: t("tab2"),
@@ -35,7 +35,7 @@ export function GradesPageContent() {
       skills: [t("mS1"), t("mS2"), t("mS3"), t("mS4"), t("mS5"), t("mS6")],
       outcomeLabel: t("mOutcomeLabel"),
       outcome: t("mOutcome"),
-      color: "#2D9CDB",
+      color: "#C4911E",
     },
     {
       label: t("tab3"),
@@ -47,7 +47,7 @@ export function GradesPageContent() {
       skills: [t("sS1"), t("sS2"), t("sS3"), t("sS4"), t("sS5"), t("sS6")],
       outcomeLabel: t("sOutcomeLabel"),
       outcome: t("sOutcome"),
-      color: "#FC9A19",
+      color: "#142444",
     },
   ];
 
@@ -58,7 +58,7 @@ export function GradesPageContent() {
       {/* Hero */}
       <section className="max-w-360 mx-auto px-7.5 pt-10 pb-14 md:pt-14 md:pb-20">
         <Reveal>
-          <span className="inline-block text-[#FC9A19] text-[11px] font-semibold uppercase tracking-widest mb-5">
+          <span className="inline-block text-[#C4911E] text-[11px] font-semibold uppercase tracking-widest mb-5">
             {t("label")}
           </span>
         </Reveal>

@@ -66,11 +66,11 @@ export function AppPageContent() {
   ];
 
   return (
-    <div className="flex-1 bg-[#1a1a1a]">
+    <div className="flex-1 bg-[#142444]">
       {/* Hero */}
       <section className="max-w-360 mx-auto px-7.5 pt-10 pb-14 md:pt-14 md:pb-20">
         <Reveal>
-          <span className="inline-block text-[#FC9A19] text-[11px] font-semibold uppercase tracking-widest mb-5">
+          <span className="inline-block text-[#C4911E] text-[11px] font-semibold uppercase tracking-widest mb-5">
             {t("label")}
           </span>
         </Reveal>
@@ -80,7 +80,7 @@ export function AppPageContent() {
           </h1>
         </Reveal>
         <Reveal delay={0.12}>
-          <p className="text-[#FC9A19] font-medium text-[16px] md:text-[18px] mb-8">
+          <p className="text-[#C4911E] font-medium text-[16px] md:text-[18px] mb-8">
             {t("subheading")}
           </p>
         </Reveal>
@@ -99,14 +99,14 @@ export function AppPageContent() {
                 key={i}
                 onClick={() => setActive(i)}
                 className="relative flex items-center gap-2.5 px-6 py-4 text-[13px] font-medium whitespace-nowrap transition-colors"
-                style={{ color: active === i ? "#FC9A19" : "#888" }}
+                style={{ color: active === i ? "#C4911E" : "#888" }}
               >
                 <f.Icon size={16} />
                 <span>{f.label}</span>
                 {active === i && (
                   <motion.span
                     layoutId="app-tab-line"
-                    className="absolute bottom-0 left-0 right-0 h-0.5 bg-[#FC9A19]"
+                    className="absolute bottom-0 left-0 right-0 h-0.5 bg-[#C4911E]"
                     transition={{ type: "spring", stiffness: 380, damping: 32 }}
                   />
                 )}
@@ -136,10 +136,10 @@ export function AppPageContent() {
                     sizes="(max-width: 1024px) 100vw, 384px"
                   />
                 </div>
-                <div className="inline-flex items-center justify-center w-16 h-16 bg-[#FC9A19]/15 mb-6">
+                <div className="inline-flex items-center justify-center w-16 h-16 bg-[#C4911E]/15 mb-6">
                   {(() => {
                     const Icon = features[active].Icon;
-                    return <Icon size={32} className="text-[#FC9A19]" />;
+                    return <Icon size={32} className="text-[#C4911E]" />;
                   })()}
                 </div>
                 <h2 className="font-serif font-semibold text-white text-[26px] md:text-[34px] leading-[1.2] mb-5">
@@ -151,7 +151,7 @@ export function AppPageContent() {
                 <ul className="flex flex-col gap-4">
                   {features[active].details.map((d, j) => (
                     <li key={j} className="flex items-start gap-4 border border-white/10 p-5">
-                      <span className="font-serif font-bold text-[#FC9A19] text-[22px] leading-none shrink-0 mt-0.5">
+                      <span className="font-serif font-bold text-[#C4911E] text-[22px] leading-none shrink-0 mt-0.5">
                         {String(j + 1).padStart(2, "0")}
                       </span>
                       <p className="text-white/80 text-[15px] leading-[1.7]">{d}</p>

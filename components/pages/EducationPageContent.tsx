@@ -32,7 +32,7 @@ export function EducationPageContent() {
       {/* Hero */}
       <section className="max-w-360 mx-auto px-7.5 pt-10 pb-14 md:pt-14 md:pb-20">
         <Reveal>
-          <span className="inline-block text-[#FC9A19] text-[11px] font-semibold uppercase tracking-widest mb-5">
+          <span className="inline-block text-[#C4911E] text-[11px] font-semibold uppercase tracking-widest mb-5">
             {t("label")}
           </span>
         </Reveal>
@@ -52,7 +52,7 @@ export function EducationPageContent() {
       <section className="bg-[#f8f7f4]">
         <div className="max-w-360 mx-auto px-7.5 py-14 md:py-20">
           <Reveal>
-            <span className="inline-block text-[#FC9A19] text-[11px] font-semibold uppercase tracking-widest mb-8">
+            <span className="inline-block text-[#C4911E] text-[11px] font-semibold uppercase tracking-widest mb-8">
               {t("scheduleLabel")}
             </span>
           </Reveal>
@@ -61,10 +61,10 @@ export function EducationPageContent() {
               <Reveal key={i} delay={i * 0.06} direction="left">
                 <div
                   className={`flex items-center gap-6 md:gap-12 py-5 border-b border-[#e5e5e5] ${
-                    row.highlight ? "bg-[#FC9A19]/6 -mx-7.5 px-7.5" : ""
+                    row.highlight ? "bg-[#C4911E]/6 -mx-7.5 px-7.5" : ""
                   }`}
                 >
-                  <span className="font-mono text-[#FC9A19] text-[15px] font-bold w-14 shrink-0">
+                  <span className="font-mono text-[#C4911E] text-[15px] font-bold w-14 shrink-0">
                     {row.time}
                   </span>
                   <div className="w-px h-5 bg-[#e0e0e0] shrink-0" />
@@ -76,7 +76,7 @@ export function EducationPageContent() {
                     {row.event}
                   </span>
                   {row.highlight && (
-                    <span className="ml-auto hidden sm:inline-block text-[11px] font-semibold uppercase tracking-wide text-[#FC9A19] bg-[#FC9A19]/15 px-3 py-1">
+                    <span className="ml-auto hidden sm:inline-block text-[11px] font-semibold uppercase tracking-wide text-[#C4911E] bg-[#C4911E]/15 px-3 py-1">
                       Ключевой блок
                     </span>
                   )}
@@ -91,7 +91,7 @@ export function EducationPageContent() {
       <section className="max-w-360 mx-auto px-7.5 py-14 md:py-20">
         <div className="grid md:grid-cols-2 gap-10 mb-14">
           <Reveal direction="left">
-            <div className="border-l-4 border-[#FC9A19] pl-7">
+            <div className="border-l-4 border-[#C4911E] pl-7">
               <h3 className="font-serif font-semibold text-[#1a1a1a] text-[22px] md:text-[28px] leading-[1.2] mb-5">
                 {t("morningLabel")}
               </h3>
@@ -99,7 +99,7 @@ export function EducationPageContent() {
             </div>
           </Reveal>
           <Reveal direction="right" delay={0.1}>
-            <div className="border-l-4 border-[#1a1a1a] pl-7">
+            <div className="border-l-4 border-[#142444] pl-7">
               <h3 className="font-serif font-semibold text-[#1a1a1a] text-[22px] md:text-[28px] leading-[1.2] mb-5">
                 {t("afternoonLabel")}
               </h3>
@@ -121,10 +121,10 @@ export function EducationPageContent() {
       </section>
 
       {/* Tech base */}
-      <section className="bg-[#1a1a1a]">
+      <section className="bg-[#142444]">
         <div className="max-w-360 mx-auto px-7.5 py-14 md:py-20">
           <Reveal>
-            <span className="inline-block text-[#FC9A19] text-[11px] font-semibold uppercase tracking-widest mb-5">
+            <span className="inline-block text-[#C4911E] text-[11px] font-semibold uppercase tracking-widest mb-5">
               {t("techLabel")}
             </span>
             <h2 className="font-serif font-semibold text-white text-[26px] md:text-[36px] leading-[1.2] mb-4">
@@ -145,7 +145,7 @@ export function EducationPageContent() {
                     />
                   </div>
                   <div className="p-7">
-                    <item.Icon size={26} className="text-[#FC9A19] mb-4" />
+                    <item.Icon size={26} className="text-[#C4911E] mb-4" />
                     <h4 className="font-semibold text-white text-[15px] mb-3">{item.name}</h4>
                     <p className="text-[#888] text-[13px] leading-[1.7]">{item.desc}</p>
                   </div>

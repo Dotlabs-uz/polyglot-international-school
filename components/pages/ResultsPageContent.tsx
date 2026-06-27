@@ -14,7 +14,7 @@ export function ResultsPageContent() {
       title: t("ieltsTitle"),
       body: t("ieltsBody"),
       items: [t("ielts1"), t("ielts2"), t("ielts3"), t("ielts4")],
-      color: "#2D9CDB",
+      color: "#142444",
     },
     {
       label: t("satLabel"),
@@ -22,7 +22,7 @@ export function ResultsPageContent() {
       title: t("satTitle"),
       body: t("satBody"),
       items: [t("sat1"), t("sat2"), t("sat3"), t("sat4")],
-      color: "#FC9A19",
+      color: "#C4911E",
     },
     {
       label: t("hskLabel"),
@@ -30,7 +30,7 @@ export function ResultsPageContent() {
       title: t("hskTitle"),
       body: t("hskBody"),
       items: [t("hsk1"), t("hsk2"), t("hsk3"), t("hsk4")],
-      color: "#E74C3C",
+      color: "#142444",
     },
   ];
 
@@ -41,7 +41,7 @@ export function ResultsPageContent() {
       {/* Hero */}
       <section className="max-w-360 mx-auto px-7.5 pt-10 pb-14 md:pt-14 md:pb-20">
         <Reveal>
-          <span className="inline-block text-[#FC9A19] text-[11px] font-semibold uppercase tracking-widest mb-5">
+          <span className="inline-block text-[#C4911E] text-[11px] font-semibold uppercase tracking-widest mb-5">
             {t("label")}
           </span>
         </Reveal>
@@ -120,7 +120,7 @@ export function ResultsPageContent() {
       {/* Methodology */}
       <section className="max-w-360 mx-auto px-7.5 py-14 md:py-20">
         <Reveal>
-          <span className="inline-block text-[#FC9A19] text-[11px] font-semibold uppercase tracking-widest mb-5">
+          <span className="inline-block text-[#C4911E] text-[11px] font-semibold uppercase tracking-widest mb-5">
             {t("methodLabel")}
           </span>
           <h2 className="font-serif font-semibold text-[#1a1a1a] text-[26px] md:text-[36px] leading-[1.2] mb-12 max-w-2xl">
@@ -131,7 +131,7 @@ export function ResultsPageContent() {
           {methods.map((m, i) => (
             <RevealItem key={i}>
               <div className="flex items-start gap-5 bg-[#f8f7f4] p-6">
-                <span className="font-serif font-bold text-[#FC9A19] text-[28px] leading-none shrink-0 mt-0.5">
+                <span className="font-serif font-bold text-[#C4911E] text-[28px] leading-none shrink-0 mt-0.5">
                   {String(i + 1).padStart(2, "0")}
                 </span>
                 <p className="text-[#333] text-[15px] leading-[1.7]">{m}</p>

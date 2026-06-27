@@ -17,7 +17,7 @@ export function FounderPageContent() {
       {/* Hero */}
       <section className="max-w-360 mx-auto px-7.5 pt-10 pb-14 md:pt-14 md:pb-20">
         <Reveal>
-          <span className="inline-block text-[#FC9A19] text-[11px] font-semibold uppercase tracking-widest mb-5">
+          <span className="inline-block text-[#C4911E] text-[11px] font-semibold uppercase tracking-widest mb-5">
             {t("label")}
           </span>
         </Reveal>
@@ -48,10 +48,10 @@ export function FounderPageContent() {
                   sizes="(max-width: 1024px) 100vw, 320px"
                 />
               </div>
-              <div className="inline-flex items-center justify-center w-16 h-16 bg-[#FC9A19]/15 mb-6">
-                <RiMedalLine size={32} className="text-[#FC9A19]" />
+              <div className="inline-flex items-center justify-center w-16 h-16 bg-[#C4911E]/15 mb-6">
+                <RiMedalLine size={32} className="text-[#C4911E]" />
               </div>
-              <span className="block text-[11px] font-semibold uppercase tracking-widest text-[#FC9A19] mb-3">
+              <span className="block text-[11px] font-semibold uppercase tracking-widest text-[#C4911E] mb-3">
                 {t("founderLabel")}
               </span>
               <h2 className="font-serif font-semibold text-[#1a1a1a] text-[26px] md:text-[32px] leading-[1.2] mb-2">
@@ -71,7 +71,7 @@ export function FounderPageContent() {
               <ul className="flex flex-col gap-3 mb-10">
                 {education.map((edu, i) => (
                   <li key={i} className="flex items-start gap-3">
-                    <span className="mt-2 w-1.5 h-1.5 rounded-full bg-[#FC9A19] shrink-0" />
+                    <span className="mt-2 w-1.5 h-1.5 rounded-full bg-[#C4911E] shrink-0" />
                     <span className="text-[#333] text-[15px] leading-snug">{edu}</span>
                   </li>
                 ))}
@@ -79,7 +79,7 @@ export function FounderPageContent() {
               <ul className="flex flex-col gap-3">
                 {govWork.map((g, i) => (
                   <li key={i} className="flex items-start gap-3">
-                    <span className="mt-2 w-1.5 h-1.5 rounded-full bg-[#1a1a1a] shrink-0" />
+                    <span className="mt-2 w-1.5 h-1.5 rounded-full bg-[#142444] shrink-0" />
                     <span className="text-[#555] text-[14px] leading-snug">{g}</span>
                   </li>
                 ))}
@@ -93,24 +93,25 @@ export function FounderPageContent() {
       <section className="max-w-360 mx-auto px-7.5 py-14 md:py-20">
         <Reveal>
           <div className="relative max-w-3xl">
-            <RiDoubleQuotesL size={56} className="text-[#FC9A19]/20 mb-4" />
-            <span className="block text-[11px] font-semibold uppercase tracking-widest text-[#FC9A19] mb-6">
+            <RiDoubleQuotesL size={56} className="text-[#C4911E] mb-4" />
+            <span className="block text-[11px] font-semibold uppercase tracking-widest text-[#C4911E] mb-6">
               {t("quoteLabel")}
             </span>
-            <blockquote className="font-serif text-[#1a1a1a] text-[22px] md:text-[28px] leading-[1.55]">
+            <blockquote className="font-serif text-[#142444] text-[22px] md:text-[28px] leading-[1.55] mb-6">
               {t("quote")}
             </blockquote>
+            <span className="block w-16 h-0.5 bg-[#C4911E]" />
           </div>
         </Reveal>
       </section>
 
       {/* Team */}
-      <section className="bg-[#1a1a1a]">
+      <section className="bg-[#142444]">
         <div className="max-w-360 mx-auto px-7.5 py-14 md:py-20">
           <Reveal>
             <div className="flex items-center gap-4 mb-6">
-              <RiGroupLine size={28} className="text-[#FC9A19]" />
-              <span className="text-[#FC9A19] text-[11px] font-semibold uppercase tracking-widest">
+              <RiGroupLine size={28} className="text-[#C4911E]" />
+              <span className="text-[#C4911E] text-[11px] font-semibold uppercase tracking-widest">
                 {t("teamLabel")}
               </span>
             </div>
@@ -136,7 +137,7 @@ export function FounderPageContent() {
             {teamItems.map((item, i) => (
               <RevealItem key={i}>
                 <div className="flex items-start gap-3 bg-white/5 p-5">
-                  <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-[#FC9A19] shrink-0" />
+                  <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-[#C4911E] shrink-0" />
                   <p className="text-white/80 text-[14px] leading-snug">{item}</p>
                 </div>
               </RevealItem>
