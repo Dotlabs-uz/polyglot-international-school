@@ -1,8 +1,10 @@
 {
   "header": {
     "menu": "WHAT WE VALUE",
+    "close": "CLOSE",
     "login": "LOGIN",
     "apply": "APPLY",
+    "menuTag": "POLYGLOT NAVIGATION",
     "nav": {
       "home": "Home",
       "about": "About Us",
@@ -53,6 +55,45 @@
     "card3Title": "Culture",
     "card3Body": "Etiquette, cultural behavior and communication in any environment.",
     "card3Alt": "Cultural education"
+  },
+  "businessReadinessPage": {
+    "backLabel": "Readiness for business and adult life",
+    "friday-talk": {
+      "label": "Friday Talk",
+      "heading": "Friday Talk: live networking with real leaders",
+      "intro": "Every Friday, classes pause for an hour — not for a break, but to meet the real world. An entrepreneur, top executive, or public figure comes to the assembly hall ready to speak with students as equals.",
+      "image": "/lab-stem-4.jpg",
+      "points": [
+        { "title": "Guests from real business", "body": "Over 30 speakers come through Friday Talk each year — from startup founders to executives of major Uzbek companies." },
+        { "title": "No-script format", "body": "30 minutes of talk, then open questions from students — no moderation, no prepared answers." },
+        { "title": "Networking afterwards", "body": "After every session, informal conversation, contact exchange, and sometimes internship invitations follow." },
+        { "title": "Logged in the portfolio", "body": "Every meeting is recorded in the student's personal portfolio as part of their extracurricular record." }
+      ]
+    },
+    "practical-skills": {
+      "label": "Practical Skills",
+      "heading": "Practical skills: from theory to real application",
+      "intro": "Knowledge becomes a skill only when it is applied. The practical skills track is built around real tools students use from their very first lessons.",
+      "image": "/lab-stem-1.jpg",
+      "points": [
+        { "title": "Financial literacy", "body": "Personal budgeting, investment basics, taxes and credit — explained with real life examples, not abstract problems." },
+        { "title": "Marketing & SMM", "body": "Students run training projects on social media, analyse real brand cases and build their own mini campaigns." },
+        { "title": "Podcast creation", "body": "Recording, editing and promoting their own audio show in the school's equipped media studio." },
+        { "title": "Public speaking", "body": "Regular practice speaking in front of an audience — from classroom presentations to the Friday Talk stage." }
+      ]
+    },
+    "culture": {
+      "label": "Culture",
+      "heading": "Culture: confidence in any setting",
+      "intro": "Academic success means little without the ability to carry oneself with dignity in any situation. The culture track prepares students for business, social and international communication.",
+      "image": "/geography-classroom.jpg",
+      "points": [
+        { "title": "Business & social etiquette", "body": "Table manners, dress code, norms of business communication — things usually learned only in adult life." },
+        { "title": "Cross-cultural communication", "body": "Practice communicating with people from different cultures through the school's language clubs and international programmes." },
+        { "title": "Confident speech", "body": "Voice training, diction and argumentation — the foundation of confident communication in any professional setting." },
+        { "title": "Empathy & tact", "body": "Developing social intelligence through role play and analysis of real communication situations." }
+      ]
+    }
   },
   "campus": {
     "heading": "A building as a promise. Every detail is a design decision, not a coincidence.",

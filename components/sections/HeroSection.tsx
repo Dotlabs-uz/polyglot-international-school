@@ -6,7 +6,6 @@ import { Link } from "@/i18n/navigation";
 import { useTranslations } from "next-intl";
 import { motion, AnimatePresence } from "framer-motion";
 
-const slowDecel = [0.16, 0, 0.3, 1] as const;
 const easeOut   = [0.22, 1, 0.36, 1] as const;
 const crossFade = [0.25, 1, 0.5, 1] as const;
 const textEase  = [0.16, 1, 0.3, 1] as const;
@@ -31,42 +30,39 @@ export function HeroSection() {
   }, [slides.length]);
 
   return (
-    <section className="bg-white p-7.5" aria-label="Главный экран">
-      <div className="relative overflow-hidden flex flex-col min-h-[calc(100svh-60px)]">
+    <section className="relative w-full bg-white p-2.5 sm:p-4 md:p-5 overflow-hidden select-none" aria-label="Главный экран">
+      {/* Decorative inset frame */}
+      <div className="absolute inset-x-4 top-4 bottom-4 border border-black/5 pointer-events-none z-10" />
 
-        <div className="absolute inset-0" aria-hidden="true">
-          {slides.map((slide, i) => (
+      <div className="w-full h-[95vh] sm:h-[88vh] md:h-[95vh] overflow-hidden relative flex flex-col justify-between">
+
+        {/* Cross-fading background slideshow */}
+        <div className="absolute inset-0 z-0">
+          <AnimatePresence mode="wait">
             <motion.div
-              key={slide.image}
+              key={active}
+              initial={{ opacity: 0, scale: 1.05 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 1.05 }}
+              transition={{ duration: 1.1, ease: crossFade }}
               className="absolute inset-0"
-              initial={false}
-              animate={{ opacity: active === i ? 1 : 0, scale: active === i ? 1 : 0.78 }}
-              transition={{ duration: 1.8, ease: crossFade }}
             >
               <Image
-                src={slide.image}
-                alt="Студенты на территории кампуса Polyglot International School"
+                src={slides[active].image}
+                alt="Polyglot International School"
                 fill
                 className="object-cover object-center"
-                priority={i === 0}
+                priority={active === 0}
                 sizes="100vw"
                 quality={90}
               />
             </motion.div>
-          ))}
-
-          <div className="absolute inset-0 bg-black/40" />
-          <div className="absolute inset-0 bg-linear-to-t from-black/55 via-transparent to-black/20" />
-
-          <motion.div
-            className="absolute inset-0 bg-black"
-            initial={{ opacity: 0.88 }}
-            animate={{ opacity: 0 }}
-            transition={{ duration: 2.2, ease: slowDecel }}
-          />
+          </AnimatePresence>
+          <div className="absolute inset-0 bg-linear-to-b from-black/45 via-black/20 to-black/55" />
         </div>
 
-        <div className="relative z-10 flex-1 flex flex-col items-center justify-center text-center px-6 md:px-10 pt-24 pb-8">
+        {/* Center editorial block */}
+        <div className="relative z-20 my-auto text-center px-4 max-w-4xl mx-auto flex flex-col items-center justify-center space-y-6 sm:space-y-8">
           <AnimatePresence mode="wait">
             <motion.div
               key={active}
@@ -90,24 +86,25 @@ export function HeroSection() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1.0, delay: 1.0, ease: easeOut }}
-            className="mt-11 flex flex-col sm:flex-row items-center gap-4"
+            className="flex flex-col sm:flex-row items-center gap-4"
           >
             <Link
               href="/admissions"
-              className="inline-block text-[11px] font-medium tracking-widest uppercase text-white border border-white/60 hover:border-white hover:bg-white/15 hover:backdrop-blur-md px-9 py-3.5 transition duration-300 w-full sm:w-auto text-center"
+              className="inline-block text-[11px] font-medium tracking-widest uppercase text-white border border-white hover:bg-white hover:text-[#1a1a1a] px-9 py-3.5 transition duration-300 w-full sm:w-auto text-center"
             >
               {t("cta1")}
             </Link>
             <Link
               href="/about"
-              className="inline-block text-[11px] font-medium tracking-widest uppercase text-white border border-white/60 hover:border-white hover:bg-white/15 hover:backdrop-blur-md px-9 py-3.5 transition duration-300 w-full sm:w-auto text-center"
+              className="inline-block text-[11px] font-medium tracking-widest uppercase text-white border border-white/35 hover:border-white bg-white/5 backdrop-blur-md hover:bg-white/15 px-9 py-3.5 transition duration-300 w-full sm:w-auto text-center"
             >
               {t("cta2")}
             </Link>
           </motion.div>
         </div>
 
-        <div className="relative z-10 pb-9 flex items-center justify-center gap-3" role="group" aria-label="Навигация по слайдам">
+        {/* Bottom status row */}
+        <div className="relative z-20 w-full px-6 sm:px-10 py-4 sm:py-6 flex items-center justify-center gap-3" role="group" aria-label="Навигация по слайдам">
           {slides.map((_, i) => (
             <button
               key={i}

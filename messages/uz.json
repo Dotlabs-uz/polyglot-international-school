@@ -1,8 +1,10 @@
 {
   "header": {
     "menu": "BIZ QADRLAYDIGAN",
+    "close": "YOPISH",
     "login": "KIRISH",
     "apply": "ARIZA BERISH",
+    "menuTag": "POLYGLOT NAVIGATSIYA",
     "nav": {
       "home": "Bosh sahifa",
       "about": "Maktab haqida",
@@ -53,6 +55,45 @@
     "card3Title": "Madaniyat",
     "card3Body": "Etika, madaniy xulq-atvor va har qanday muhitda muloqot darslari.",
     "card3Alt": "Madaniy tarbiya"
+  },
+  "businessReadinessPage": {
+    "backLabel": "Biznes va katta hayotga tayyorlik",
+    "friday-talk": {
+      "label": "Friday Talk",
+      "heading": "Friday Talk: haqiqiy liderlar bilan jonli tarmoq",
+      "intro": "Har juma o'quv jarayoni bir soatga to'xtaydi — lekin dam olish uchun emas, haqiqiy dunyo bilan uchrashish uchun. Aktlar zaliga tadbirkor, top-menejer yoki davlat arbobi keladi va o'quvchilar bilan teng huquqda gaplashadi.",
+      "image": "/lab-stem-4.jpg",
+      "points": [
+        { "title": "Haqiqiy biznesdan mehmonlar", "body": "Yiliga Friday Talk orqali 30 dan ortiq spiker o'tadi — startap asoschilaridan O'zbekistonning yirik kompaniyalari rahbarlarigacha." },
+        { "title": "Skriptsiz format", "body": "30 daqiqalik nutq, keyin o'quvchilardan ochiq savollar — moderatsiya va tayyorlangan javoblarsiz." },
+        { "title": "Uchrashuvdan keyin tarmoq", "body": "Har bir sessiyadan keyin norasmiy muloqot, kontakt almashish, ba'zida amaliyot taklifi." },
+        { "title": "Portfolioga yozib qo'yiladi", "body": "Har bir uchrashuv o'quvchining shaxsiy portfoliosida darsdan tashqari faoliyat sifatida qayd etiladi." }
+      ]
+    },
+    "practical-skills": {
+      "label": "Amaliy ko'nikmalar",
+      "heading": "Amaliy ko'nikmalar: nazariyadan haqiqiy qo'llanishgacha",
+      "intro": "Bilim faqat qo'llanilganda ko'nikmaga aylanadi. Amaliy ko'nikmalar bloki birinchi darslardan boshlab o'quvchilar foydalanadigan haqiqiy vositalar asosida qurilgan.",
+      "image": "/lab-stem-1.jpg",
+      "points": [
+        { "title": "Moliyaviy savodxonlik", "body": "Shaxsiy byudjet, investitsiya asoslari, soliqlar va kredit — mavhum masalalar emas, real hayotiy misollar bilan." },
+        { "title": "Marketing va SMM", "body": "O'quvchilar ijtimoiy tarmoqlarda o'quv loyihalarini yuritadi, haqiqiy brend keyslarini tahlil qiladi va o'z mini-kampaniyalarini quradi." },
+        { "title": "Podkast yaratish", "body": "Maktabning jihozlangan media-studiyasida o'z audio-shousini yozib olish, montaj qilish va targ'ib qilish." },
+        { "title": "Ommaviy nutq", "body": "Auditoriya oldida muntazam nutq amaliyoti — sinf taqdimotidan Friday Talk sahnasigacha." }
+      ]
+    },
+    "culture": {
+      "label": "Madaniyat",
+      "heading": "Madaniyat: har qanday muhitda ishonch",
+      "intro": "Akademik muvaffaqiyat har qanday vaziyatda o'zini munosib tutish qobiliyatisiz hech narsaga arzimaydi. Madaniyat bloki o'quvchilarni ishbilarmonlik, dunyoviy va xalqaro muloqotga tayyorlaydi.",
+      "image": "/geography-classroom.jpg",
+      "points": [
+        { "title": "Ishbilarmonlik va dunyoviy etiket", "body": "Stol odobi, dress-kod, ishbilarmonlik muloqoti normalari — odatda faqat kattalar hayotida o'rganiladigan narsalar." },
+        { "title": "Madaniyatlararo muloqot", "body": "Maktabning til klublari va xalqaro dasturlari orqali turli madaniyat vakillari bilan muloqot amaliyoti." },
+        { "title": "Ishonchli nutq", "body": "Ovoz qo'yish, talaffuz va argumentatsiya — har qanday professional muhitda ishonchli muloqot asosi." },
+        { "title": "Empatiya va odob", "body": "Rolli o'yinlar va haqiqiy muloqot vaziyatlarini tahlil qilish orqali ijtimoiy intellektni rivojlantirish." }
+      ]
+    }
   },
   "campus": {
     "heading": "Bino — bu va'da. Har bir detal loyiha yechimi, tasodif emas.",

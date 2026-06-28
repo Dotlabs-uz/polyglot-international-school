@@ -3,13 +3,19 @@
 import Image from "next/image";
 import { Link, usePathname } from "@/i18n/navigation";
 import { useState } from "react";
-import { RiMenuLine, RiCloseLine } from "react-icons/ri";
+import { motion, AnimatePresence } from "framer-motion";
+import { RiMenuLine, RiCloseLine, RiArrowRightUpLine, RiMapPinLine, RiPhoneLine, RiMailLine } from "react-icons/ri";
 import { useTranslations } from "next-intl";
 import { cn } from "@/lib/utils";
 import { LocaleSwitcher } from "@/components/ui/LocaleSwitcher";
 
+const menuEase = [0.16, 1, 0.3, 1] as const;
+
+const NAV_KEYS = ["home", "about", "education", "campus", "life", "admissions", "contacts"] as const;
+
 export function Header() {
   const t = useTranslations("header");
+  const tFooter = useTranslations("footer");
   const [open, setOpen] = useState(false);
   const pathname = usePathname();
   const isHome = pathname === "/";
@@ -66,84 +72,104 @@ export function Header() {
         </div>
       </header>
 
-      <nav
-        id="main-navigation"
-        className={cn(
-          "fixed inset-0 z-100 transition-all duration-300",
-          open ? "pointer-events-auto" : "pointer-events-none"
-        )}
-        aria-hidden={!open}
-        aria-label="Основная навигация"
-      >
-        <div
-          className={cn(
-            "absolute inset-0 bg-black/55 transition-opacity duration-300",
-            open ? "opacity-100" : "opacity-0"
-          )}
-          onClick={() => setOpen(false)}
-          aria-hidden="true"
-        />
+      {/* Fullscreen elite menu overlay */}
+      <AnimatePresence>
+        {open && (
+          <motion.div
+            initial={{ opacity: 0, y: -30 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -30 }}
+            transition={{ duration: 0.5, ease: menuEase }}
+            className="fixed inset-0 z-100 bg-surface text-[#1a1a1a] flex flex-col justify-between p-6 sm:p-10 md:p-16 overflow-y-auto"
+            role="dialog"
+            aria-modal="true"
+            aria-label="Основная навигация"
+            id="main-navigation"
+          >
+            <div className="absolute inset-4 border border-black/10 pointer-events-none" />
 
-        <div
-          className={cn(
-            "absolute top-0 left-0 h-full w-80 bg-primary flex flex-col transition-transform duration-300 ease-out",
-            open ? "translate-x-0" : "-translate-x-full"
-          )}
-          role="dialog"
-          aria-modal={open}
-          aria-label="Меню навигации"
-        >
-          <div className="flex items-center justify-between px-7.5 py-7 border-b border-white/10">
-            <span className="text-white text-[11px] font-medium tracking-widest uppercase">
-              {t("menu")}
-            </span>
-            <button
-              onClick={() => setOpen(false)}
-              className="text-white/60 hover:text-white transition-colors"
-              aria-label="Закрыть меню"
-            >
-              <RiCloseLine size={22} aria-hidden="true" />
-            </button>
-          </div>
+            {/* Top row */}
+            <div className="flex items-center justify-between z-10 w-full">
+              <Link
+                href="/"
+                onClick={() => setOpen(false)}
+                className="flex items-center"
+                aria-label="Polyglot International School — главная страница"
+              >
+                <Image
+                  src="/logo_header_full.png"
+                  alt="Polyglot International School"
+                  width={186}
+                  height={40}
+                  className="object-contain h-8 sm:h-9 w-auto"
+                />
+              </Link>
 
-          <nav className="flex-1 px-7.5 py-8" aria-label="Меню разделов">
-            <ul className="flex flex-col gap-0.5" role="list">
-              <li>
-                <Link
-                  href="/"
-                  className="block text-white/75 hover:text-white font-serif text-[26px] py-3 transition-colors duration-200"
-                  onClick={() => setOpen(false)}
-                >
-                  {t("nav.home")}
-                </Link>
-              </li>
-              {(
-                ["about", "education", "campus", "life", "admissions", "contacts"] as const
-              ).map((key) => (
-                <li key={key}>
+              <button
+                onClick={() => setOpen(false)}
+                className="group flex items-center gap-2.5 px-5 py-2 border border-black/20 hover:border-black/50 text-[10px] font-bold uppercase tracking-[0.15em] transition-all"
+                aria-label="Закрыть меню"
+              >
+                <span className="text-[#1a1a1a]/80 group-hover:text-[#1a1a1a]">{t("close")}</span>
+                <RiCloseLine size={15} className="transform group-hover:rotate-90 transition-transform duration-300" aria-hidden="true" />
+              </button>
+            </div>
+
+            {/* Big editorial links */}
+            <div className="my-auto max-w-xl mx-auto w-full space-y-4 text-center sm:text-left pt-10">
+              <span className="text-[9.5px] font-bold tracking-[0.25em] text-accent block uppercase">
+                — {t("menuTag")} —
+              </span>
+              <nav className="flex flex-col space-y-1 sm:space-y-2" aria-label="Меню разделов">
+                {NAV_KEYS.map((key) => (
                   <Link
-                    href={`/${key}`}
-                    className="block text-white/75 hover:text-white font-serif text-[26px] py-3 transition-colors duration-200"
+                    key={key}
+                    href={key === "home" ? "/" : `/${key}`}
                     onClick={() => setOpen(false)}
+                    className="group flex items-center justify-between py-2 border-b border-black/10 hover:border-black/25 transition-colors w-full text-left"
                   >
-                    {t(`nav.${key}`)}
+                    <span className="text-[25px] sm:text-4xl font-serif text-[#1a1a1a]/80 group-hover:text-accent transition-transform duration-300 group-hover:translate-x-2">
+                      {t(`nav.${key}`)}
+                    </span>
+                    <RiArrowRightUpLine
+                      size={18}
+                      className="text-black/30 group-hover:text-accent transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform"
+                      aria-hidden="true"
+                    />
                   </Link>
-                </li>
-              ))}
-            </ul>
-          </nav>
+                ))}
+              </nav>
+            </div>
 
-          <div className="px-7.5 pb-10">
-            <Link
-              href="/apply"
-              className="block w-full text-center text-[11px] font-semibold tracking-widest uppercase text-white bg-accent hover:bg-accent-hover py-4 transition-colors duration-200"
-              onClick={() => setOpen(false)}
-            >
-              {t("apply")}
-            </Link>
-          </div>
-        </div>
-      </nav>
+            {/* Footer info row */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-8 border-t border-black/10 text-[10.5px] tracking-wider text-[#1a1a1a]/60 z-10 text-left">
+              <div className="space-y-1.5 flex items-start gap-2.5">
+                <RiMapPinLine size={14} className="text-accent shrink-0 mt-0.5" />
+                <p>{tFooter("address")}</p>
+              </div>
+              <div className="space-y-1.5">
+                <a href="mailto:info@polyglot.uz" className="flex items-center gap-2.5 hover:text-accent transition-colors">
+                  <RiMailLine size={14} className="text-accent shrink-0" />
+                  info@polyglot.uz
+                </a>
+                <a href="tel:+998904703000" className="flex items-center gap-2.5 hover:text-accent transition-colors">
+                  <RiPhoneLine size={14} className="text-accent shrink-0" />
+                  +998 90 470 30 00
+                </a>
+              </div>
+              <div className="space-y-1.5">
+                <Link
+                  href="/apply"
+                  onClick={() => setOpen(false)}
+                  className="inline-block text-[11px] font-semibold tracking-widest uppercase text-white bg-accent hover:bg-accent-hover px-6 py-3 transition-colors duration-200"
+                >
+                  {t("apply")}
+                </Link>
+              </div>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </>
   );
 }

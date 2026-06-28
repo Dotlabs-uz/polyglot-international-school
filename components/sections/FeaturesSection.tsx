@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useTranslations } from "next-intl";
+import { Link } from "@/i18n/navigation";
 import {
   Carousel,
   CarouselContent,
@@ -15,9 +16,9 @@ export function FeaturesSection() {
   const t = useTranslations("features");
 
   const cards = [
-    { image: "/lab-stem-4.jpg", alt: t("card1Alt"), title: t("card1Title"), body: t("card1Body") },
-    { image: "/lab-stem-1.jpg", alt: t("card2Alt"), title: t("card2Title"), body: t("card2Body") },
-    { image: "/geography-classroom.jpg", alt: t("card3Alt"), title: t("card3Title"), body: t("card3Body") },
+    { slug: "friday-talk", image: "/lab-stem-4.jpg", alt: t("card1Alt"), title: t("card1Title"), body: t("card1Body") },
+    { slug: "practical-skills", image: "/lab-stem-1.jpg", alt: t("card2Alt"), title: t("card2Title"), body: t("card2Body") },
+    { slug: "culture", image: "/geography-classroom.jpg", alt: t("card3Alt"), title: t("card3Title"), body: t("card3Body") },
   ] as const;
 
   return (
@@ -52,23 +53,25 @@ export function FeaturesSection() {
                   className="pl-6 basis-auto"
                 >
                   <Reveal direction="up" delay={i * 0.13}>
-                    <article className="group flex flex-col w-75 sm:w-100 h-auto">
-                      <div className="relative w-full h-75 overflow-hidden mb-4">
-                        <Image
-                          src={card.image}
-                          alt={card.alt}
-                          fill
-                          className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.06]"
-                          sizes="400px"
-                        />
-                      </div>
-                      <h3 className="font-semibold text-[#1a1a1a] text-[16px] mb-2">
-                        {card.title}
-                      </h3>
-                      <p className="text-[#555] text-[14px] leading-[1.65]">
-                        {card.body}
-                      </p>
-                    </article>
+                    <Link href={`/business-readiness/${card.slug}`} className="group flex flex-col w-75 sm:w-100 h-auto">
+                      <article>
+                        <div className="relative w-full h-75 overflow-hidden mb-4">
+                          <Image
+                            src={card.image}
+                            alt={card.alt}
+                            fill
+                            className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.06]"
+                            sizes="400px"
+                          />
+                        </div>
+                        <h3 className="font-semibold text-[#1a1a1a] text-[16px] mb-2 group-hover:text-accent transition-colors">
+                          {card.title}
+                        </h3>
+                        <p className="text-[#555] text-[14px] leading-[1.65]">
+                          {card.body}
+                        </p>
+                      </article>
+                    </Link>
                   </Reveal>
                 </CarouselItem>
               ))}
