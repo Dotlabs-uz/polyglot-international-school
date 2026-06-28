@@ -2,12 +2,12 @@
 
 import Image from "next/image";
 import { Link, usePathname } from "@/i18n/navigation";
-import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { RiMenuLine, RiCloseLine, RiArrowRightUpLine, RiMapPinLine, RiPhoneLine, RiMailLine } from "react-icons/ri";
 import { useTranslations } from "next-intl";
 import { cn } from "@/lib/utils";
 import { LocaleSwitcher } from "@/components/ui/LocaleSwitcher";
+import { useMenu } from "@/components/layout/MenuContext";
 
 const menuEase = [0.16, 1, 0.3, 1] as const;
 
@@ -16,7 +16,7 @@ const NAV_KEYS = ["home", "about", "education", "campus", "life", "admissions", 
 export function Header() {
   const t = useTranslations("header");
   const tFooter = useTranslations("footer");
-  const [open, setOpen] = useState(false);
+  const { open, setOpen } = useMenu();
   const pathname = usePathname();
   const isHome = pathname === "/";
 

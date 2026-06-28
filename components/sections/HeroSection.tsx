@@ -5,6 +5,7 @@ import Image from "next/image";
 import { Link } from "@/i18n/navigation";
 import { useTranslations } from "next-intl";
 import { motion, AnimatePresence } from "framer-motion";
+import { useMenu } from "@/components/layout/MenuContext";
 
 const easeOut   = [0.22, 1, 0.36, 1] as const;
 const crossFade = [0.25, 1, 0.5, 1] as const;
@@ -15,6 +16,7 @@ const SLIDE_INTERVAL = 7500;
 export function HeroSection() {
   const t = useTranslations("hero");
   const [active, setActive] = useState(0);
+  const { setOpen } = useMenu();
 
   const slides = [
     { image: "/facade-1.jpg", heading: t("heading"), subtext: t("subtext") },
@@ -72,7 +74,7 @@ export function HeroSection() {
               transition={{ duration: 0.7, ease: textEase }}
               className="flex flex-col items-center"
             >
-              <h1 className="font-serif font-semibold text-white leading-[1.06] max-w-5xl text-[44px] sm:text-[64px] md:text-[80px] lg:text-[92px] xl:text-[100px] 2xl:text-[110px]">
+              <h1 className="font-serif font-semibold text-white leading-[1.1] max-w-6xl text-[32px] sm:text-[46px] md:text-[58px] lg:text-[66px] xl:text-[72px] 2xl:text-[78px]">
                 {slides[active].heading}
               </h1>
 
@@ -94,12 +96,13 @@ export function HeroSection() {
             >
               {t("cta1")}
             </Link>
-            <Link
-              href="/about"
+            <button
+              type="button"
+              onClick={() => setOpen(true)}
               className="inline-block text-[11px] font-medium tracking-widest uppercase text-white border border-white/35 hover:border-white bg-white/5 backdrop-blur-md hover:bg-white/15 px-9 py-3.5 transition duration-300 w-full sm:w-auto text-center"
             >
               {t("cta2")}
-            </Link>
+            </button>
           </motion.div>
         </div>
 

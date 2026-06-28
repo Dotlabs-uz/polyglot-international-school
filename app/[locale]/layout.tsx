@@ -7,6 +7,7 @@ import { getMessages, setRequestLocale } from "next-intl/server";
 import "../globals.css";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
+import { MenuProvider } from "@/components/layout/MenuContext";
 import { routing } from "@/i18n/routing";
 
 const cormorant = Cormorant_Garamond({
@@ -206,9 +207,11 @@ export default async function RootLayout({
       </head>
       <body className="min-h-full antialiased">
         <NextIntlClientProvider messages={messages}>
-          <Header />
-          <main>{children}</main>
-          <Footer />
+          <MenuProvider>
+            <Header />
+            <main>{children}</main>
+            <Footer />
+          </MenuProvider>
         </NextIntlClientProvider>
       </body>
     </html>
