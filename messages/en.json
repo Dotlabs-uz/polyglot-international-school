@@ -39,9 +39,11 @@
   },
   "schoolChoice": {
     "heading": "Choosing a school is not choosing a building or a programme.",
-    "photo1Alt": "Modern school learning hall",
-    "photo2Alt": "Conference hall and lecture room",
-    "photo3Alt": "Working space and co-working area"
+    "photo1Alt": "Grand hall and atrium of Polyglot School",
+    "photo2Alt": "School grounds and landscape design",
+    "photo3Alt": "Second-floor classrooms and study areas",
+    "photo4Alt": "Polyglot International School facade",
+    "photo5Alt": "Chemistry and natural sciences laboratory"
   },
   "features": {
     "heading": "Readiness for business and adult life.",

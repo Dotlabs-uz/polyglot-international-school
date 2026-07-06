@@ -39,9 +39,11 @@
   },
   "schoolChoice": {
     "heading": "Maktab tanlash — bu bino yoki dastur tanlash emas.",
-    "photo1Alt": "Zamonaviy o'quv zali",
-    "photo2Alt": "Konferens zal va ma'ruza xonasi",
-    "photo3Alt": "Ish maydoni va kovorking"
+    "photo1Alt": "Polyglot maktabining katta zali va atriumi",
+    "photo2Alt": "Maktab hududi va landshaft dizayni",
+    "photo3Alt": "Ikkinchi qavatdagi o'quv xonalari",
+    "photo4Alt": "Polyglot International maktabining fasadi",
+    "photo5Alt": "Kimyo va tabiiy fanlar laboratoriyasi"
   },
   "features": {
     "heading": "Biznes va katta hayotga tayyorlik.",

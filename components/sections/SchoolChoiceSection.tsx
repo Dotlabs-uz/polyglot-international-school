@@ -21,9 +21,11 @@ export function SchoolChoiceSection() {
   useEmblaParallax(api);
 
   const photos = [
-    { src: "/school1.png", alt: t("photo1Alt"), w: "w-[830px]" },
-    { src: "/school2.png", alt: t("photo2Alt"), w: "w-[299px]" },
-    { src: "/school3.png", alt: t("photo3Alt"), w: "w-[486px]" },
+    { src: "/hall-15-p1.jpg",             alt: t("photo1Alt"), w: "w-[820px]" },
+    { src: "/exterior-landscape-p1.jpg",  alt: t("photo2Alt"), w: "w-[340px]" },
+    { src: "/floor2-p1.jpg",              alt: t("photo3Alt"), w: "w-[620px]" },
+    { src: "/exterior-front-p1.jpg",      alt: t("photo4Alt"), w: "w-[380px]" },
+    { src: "/kimyo-p1.jpg",               alt: t("photo5Alt"), w: "w-[580px]" },
   ] as const;
 
   return (
