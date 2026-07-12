@@ -20,7 +20,7 @@ const featureImages = [
   "/branded-corridor.jpg",
   "/atrium-hall.jpg",
   "/grand-lobby.jpg",
-  "/reception-hall.jpg",
+  "/floor2-p1.jpg",
 ];
 
 export function AppPageContent() {

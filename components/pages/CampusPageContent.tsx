@@ -10,13 +10,13 @@ const spaceImages = [
   "/lab-stem-1.jpg",
   "/lab-stem-3.jpg",
   "/geography-classroom.jpg",
-  "/sports-ground.jpg",
+  "/exterior-landscape-p1.jpg",
   "/grand-lobby.jpg",
 ];
 
 const gallery = [
   { src: "/atrium-hall.jpg", alt: "Атриум кампуса" },
-  { src: "/reception-hall.jpg", alt: "Холл с ресепшеном" },
+  { src: "/hall-15-p1.jpg", alt: "Торжественный холл" },
   { src: "/branded-corridor.jpg", alt: "Коридор кампуса" },
   { src: "/grand-lobby.jpg", alt: "Главный холл" },
 ];

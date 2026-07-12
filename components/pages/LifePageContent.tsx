@@ -156,7 +156,7 @@ export function LifePageContent() {
             <Reveal direction="right">
               <div className="relative w-full aspect-4/3 overflow-hidden">
                 <Image
-                  src="/sports-ground.jpg"
+                  src="/hall-6-p1.jpg"
                   alt={t("compHeading")}
                   fill
                   className="object-cover object-center"

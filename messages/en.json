@@ -1,10 +1,10 @@
 {
   "header": {
-    "menu": "WHAT WE VALUE",
+    "menu": "NAVIGATION",
     "close": "CLOSE",
     "login": "LOGIN",
     "apply": "APPLY",
-    "menuTag": "POLYGLOT NAVIGATION",
+    "menuTag": "SITE NAVIGATION",
     "nav": {
       "home": "Home",
       "about": "About Us",
@@ -551,7 +551,7 @@
     "link1": "About Us",
     "link2": "Education",
     "link3": "School Life",
-    "address": "Samarkand, Uzbekistan",
+    "address": "Samarkand, Vorsin St., 1",
     "enrollmentNote": "Enrolment for 2026/27 academic year is open.",
     "applyBtn": "APPLY",
     "copyright": "© {year} Polyglot International School. All rights reserved.",

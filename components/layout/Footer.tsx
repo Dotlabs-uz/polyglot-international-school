@@ -60,7 +60,7 @@ export function Footer() {
                 href="tel:+998904703000"
                 className="hover:text-[#1a1a1a] transition-colors"
               >
-                +998 (00) 000-00-00
+                +998 90 470 30 00
               </a>
               <a
                 href="mailto:info@polyglot.uz"

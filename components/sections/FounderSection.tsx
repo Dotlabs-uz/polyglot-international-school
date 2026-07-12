@@ -44,7 +44,7 @@ export function FounderSection() {
           <Reveal direction="left" delay={0.1}>
             <div className="relative w-full aspect-4/3 overflow-hidden">
               <Image
-                src="/succes.png"
+                src="/founder.jpg"
                 alt={t("photoAlt")}
                 fill
                 className="object-cover object-center"

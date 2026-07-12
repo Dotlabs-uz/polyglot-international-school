@@ -41,7 +41,7 @@ export function FounderPageContent() {
             <Reveal className="lg:w-80 shrink-0" direction="left">
               <div className="relative w-full aspect-4/3 overflow-hidden mb-6">
                 <Image
-                  src="/reception-hall.jpg"
+                  src="/founder.jpg"
                   alt={t("founderName")}
                   fill
                   className="object-cover object-center"

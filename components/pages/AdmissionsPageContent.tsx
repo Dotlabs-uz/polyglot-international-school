@@ -35,7 +35,7 @@ export function AdmissionsPageContent() {
         <Reveal delay={0.2} direction="up">
           <div className="relative w-full aspect-16/8 overflow-hidden">
             <Image
-              src="/reception-hall.jpg"
+              src="/exterior-front-p1.jpg"
               alt={t("heading")}
               fill
               priority

@@ -123,10 +123,11 @@ const jsonLd = {
   url: SITE_URL,
   logo: `${SITE_URL}/logo_header.png`,
   image: `${SITE_URL}/hero.png`,
-  telephone: "+998000000000",
+  telephone: "+998904703000",
   email: "info@polyglot.uz",
   address: {
     "@type": "PostalAddress",
+    streetAddress: "ул. Ворсин, 1",
     addressLocality: "Самарканд",
     addressCountry: "UZ",
   },

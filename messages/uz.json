@@ -1,10 +1,10 @@
 {
   "header": {
-    "menu": "BIZ QADRLAYDIGAN",
+    "menu": "NAVIGATSIYA",
     "close": "YOPISH",
     "login": "KIRISH",
     "apply": "ARIZA BERISH",
-    "menuTag": "POLYGLOT NAVIGATSIYA",
+    "menuTag": "SAYT NAVIGATSIYASI",
     "nav": {
       "home": "Bosh sahifa",
       "about": "Maktab haqida",
@@ -549,7 +549,7 @@
     "link1": "Maktab haqida",
     "link2": "Ta'lim",
     "link3": "Maktab hayoti",
-    "address": "Samarqand, O'zbekiston",
+    "address": "Samarqand sh., Vorsin ko'chasi, 1",
     "enrollmentNote": "2026/27 o'quv yiliga qabul ochiq.",
     "applyBtn": "ARIZA",
     "copyright": "© {year} Polyglot International School. Barcha huquqlar himoyalangan.",
