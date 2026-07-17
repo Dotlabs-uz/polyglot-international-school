@@ -31,7 +31,7 @@ export function ApplyPageContent() {
       <section className="bg-[#f8f7f4]">
         <div className="max-w-360 mx-auto px-7.5 py-14 md:py-20">
           <Reveal direction="up">
-            <div className="bg-white p-6 md:p-10 max-w-2xl mx-auto">
+            <div className="bg-white p-6 md:p-12 max-w-4xl mx-auto">
               <AmoCrmForm />
             </div>
           </Reveal>
