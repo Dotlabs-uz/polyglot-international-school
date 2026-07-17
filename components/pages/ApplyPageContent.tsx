@@ -1,13 +1,12 @@
 "use client";
 
-import { useLocale, useTranslations } from "next-intl";
+import { useTranslations } from "next-intl";
 import { Reveal } from "@/components/ui/Reveal";
 import { AmoCrmForm } from "@/components/forms/AmoCrmForm";
 import { RiPhoneLine } from "react-icons/ri";
 
 export function ApplyPageContent() {
   const t = useTranslations("applyPage");
-  const locale = useLocale();
 
   return (
     <div className="flex-1 bg-white">
@@ -33,7 +32,7 @@ export function ApplyPageContent() {
         <div className="max-w-360 mx-auto px-7.5 py-14 md:py-20">
           <Reveal direction="up">
             <div className="bg-white p-6 md:p-10 max-w-2xl mx-auto">
-              <AmoCrmForm formId="1725042" hash="7d50db6eef500612d3f2c7e6bb64b14a" locale={locale} />
+              <AmoCrmForm />
             </div>
           </Reveal>
           <Reveal delay={0.1}>

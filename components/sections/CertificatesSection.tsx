@@ -85,7 +85,7 @@ export function CertificatesSection() {
             className="group relative w-full xl:w-106.5 h-105 sm:h-140 xl:h-184 shrink-0 overflow-hidden"
           >
             <Image
-              src="/certificates.jpg"
+              src="/children.jpg"
               alt={t("girlAlt")}
               fill
               className="object-cover object-center transition-transform duration-700 ease-out group-hover:scale-[1.06]"
