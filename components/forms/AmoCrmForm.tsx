@@ -20,7 +20,7 @@ export function AmoCrmForm() {
     widget.id = "amoforms_script_1725042";
     widget.async = true;
     widget.charset = "utf-8";
-    widget.src = "https://forms.amocrm.ru/forms/assets/js/amoforms.js?1784264472";
+    widget.src = "https://forms.amocrm.ru/forms/assets/js/amoforms.js?1784271732";
     ref.current.appendChild(widget);
   }, []);
 
