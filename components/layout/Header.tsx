@@ -65,8 +65,35 @@ export function Header() {
               />
             </Link>
 
-            <div className="flex items-center gap-5 shrink-0">
+            <div className="flex items-center gap-4 shrink-0">
               <LocaleSwitcher />
+              <a
+                href="tel:+998904703000"
+                aria-label="Позвонить в школу"
+                className={cn(
+                  "hidden sm:flex items-center gap-2.5 px-4 py-2 border transition-all duration-300 group",
+                  isHome
+                    ? "border-white/40 text-white hover:bg-white hover:text-[#1a1a1a]"
+                    : "border-[#C4911E] text-[#C4911E] hover:bg-[#C4911E] hover:text-white"
+                )}
+              >
+                <RiPhoneLine size={15} className="shrink-0" aria-hidden="true" />
+                <span className="text-[11px] font-semibold tracking-widest uppercase hidden md:inline">
+                  +998 90 470 30 00
+                </span>
+              </a>
+              <a
+                href="tel:+998904703000"
+                aria-label="Позвонить в школу"
+                className={cn(
+                  "sm:hidden flex items-center justify-center w-9 h-9 border transition-all duration-300",
+                  isHome
+                    ? "border-white/40 text-white hover:bg-white hover:text-[#1a1a1a]"
+                    : "border-[#C4911E] text-[#C4911E] hover:bg-[#C4911E] hover:text-white"
+                )}
+              >
+                <RiPhoneLine size={16} aria-hidden="true" />
+              </a>
             </div>
           </div>
         </div>
