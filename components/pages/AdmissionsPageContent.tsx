@@ -56,7 +56,7 @@ export function AdmissionsPageContent() {
                 <span className="inline-block text-[#C4911E] text-[11px] font-semibold uppercase tracking-widest mb-5">
                   {t("t1Label")}
                 </span>
-                <h2 className="font-serif font-semibold text-[#1a1a1a] text-[22px] md:text-[28px] leading-[1.25] mb-6">
+                <h2 className="font-serif font-semibold text-[#1a1a1a] text-[22px] md:text-[28px] leading-light mb-6">
                   {t("t1Heading")}
                 </h2>
                 <p className="text-[#555] text-[14px] md:text-[15px] leading-[1.8] mb-8">
@@ -79,7 +79,7 @@ export function AdmissionsPageContent() {
                 <span className="inline-block text-[#142444] text-[11px] font-semibold uppercase tracking-widest mb-5">
                   {t("t2Label")}
                 </span>
-                <h2 className="font-serif font-semibold text-[#1a1a1a] text-[22px] md:text-[28px] leading-[1.25] mb-6">
+                <h2 className="font-serif font-semibold text-[#1a1a1a] text-[22px] md:text-[28px] leading-light mb-6">
                   {t("t2Heading")}
                 </h2>
                 <p className="text-[#555] text-[14px] md:text-[15px] leading-[1.8] mb-8">
@@ -107,7 +107,7 @@ export function AdmissionsPageContent() {
             <span className="inline-block text-[#C4911E] text-[11px] font-semibold uppercase tracking-widest mb-5">
               {t("docsLabel")}
             </span>
-            <h2 className="font-serif font-semibold text-[#1a1a1a] text-[22px] md:text-[28px] leading-[1.25] mb-8">
+            <h2 className="font-serif font-semibold text-[#1a1a1a] text-[22px] md:text-[28px] leading-light mb-8">
               {t("docsHeading")}
             </h2>
             <ul className="flex flex-col gap-3">
@@ -127,14 +127,14 @@ export function AdmissionsPageContent() {
             <span className="inline-block text-[#C4911E] text-[11px] font-semibold uppercase tracking-widest mb-5">
               {t("timeLabel")}
             </span>
-            <h2 className="font-serif font-semibold text-[#1a1a1a] text-[22px] md:text-[28px] leading-[1.25] mb-8">
+            <h2 className="font-serif font-semibold text-[#1a1a1a] text-[22px] md:text-[28px] leading-light mb-8">
               {t("timeHeading")}
             </h2>
             <ul className="flex flex-col gap-0">
               {timeline.map((step, i) => (
                 <li key={i} className="flex items-start gap-5 py-5 border-b border-[#eee]">
                   <span
-                    className="flex-shrink-0 w-8 h-8 rounded-full bg-[#C4911E] text-white text-[13px] font-bold flex items-center justify-center"
+                    className="shrink-0 w-8 h-8 rounded-full bg-[#C4911E] text-white text-[13px] font-bold flex items-center justify-center"
                   >
                     {i + 1}
                   </span>

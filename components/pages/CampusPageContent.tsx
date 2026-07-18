@@ -48,7 +48,7 @@ export function CampusPageContent() {
     <div className="flex-1 bg-white">
       {/* Hero with facade image */}
       <section className="relative">
-        <div className="relative w-full aspect-16/9 md:aspect-21/9 overflow-hidden">
+        <div className="relative w-full aspect-video md:aspect-21/9 overflow-hidden">
           <Image
             src="/facade-2.jpg"
             alt="Polyglot International School — фасад здания"
@@ -57,7 +57,7 @@ export function CampusPageContent() {
             className="object-cover object-center"
             sizes="100vw"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-black/10" />
+          <div className="absolute inset-0 bg-linear-to-t from-black/70 via-black/20 to-black/10" />
         </div>
         <div className="absolute inset-0 flex flex-col justify-end">
           <div className="max-w-360 mx-auto w-full px-7.5 pb-10 md:pb-16">
