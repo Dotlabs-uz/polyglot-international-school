@@ -2,12 +2,14 @@
 
 import { useLocale } from "next-intl";
 import { usePathname, useRouter } from "@/i18n/navigation";
+import { useState, useRef, useEffect } from "react";
+import { RiGlobalLine, RiArrowDownSLine, RiCheckLine } from "react-icons/ri";
 import { cn } from "@/lib/utils";
 
 const LOCALES = [
-  { code: "ru", label: "RU" },
-  { code: "en", label: "EN" },
-  { code: "uz", label: "UZ" },
+  { code: "ru", short: "RU", label: "Русский" },
+  { code: "en", short: "EN", label: "English" },
+  { code: "uz", short: "UZ", label: "O'zbek" },
 ] as const;
 
 type LocaleCode = (typeof LOCALES)[number]["code"];
@@ -16,33 +18,72 @@ export function LocaleSwitcher() {
   const current = useLocale() as LocaleCode;
   const router = useRouter();
   const pathname = usePathname();
+  const isHome = pathname === "/";
+  const [open, setOpen] = useState(false);
+  const ref = useRef<HTMLDivElement>(null);
 
-  const setLocale = (locale: LocaleCode) => {
-    if (locale === current) return;
-    router.replace(pathname, { locale });
-  };
+  useEffect(() => {
+    if (!open) return;
+    function onOutside(e: MouseEvent) {
+      if (ref.current && !ref.current.contains(e.target as Node)) setOpen(false);
+    }
+    document.addEventListener("mousedown", onOutside);
+    return () => document.removeEventListener("mousedown", onOutside);
+  }, [open]);
+
+  const currentLocale = LOCALES.find((l) => l.code === current)!;
 
   return (
-    <div
-      className="flex items-center"
-      role="group"
-      aria-label="Language selector"
-    >
-      {LOCALES.map(({ code, label }, i) => (
-        <button
-          key={code}
-          onClick={() => setLocale(code)}
-          aria-label={`Switch to ${label}`}
-          aria-pressed={current === code}
-          className={cn(
-            "text-[10px] font-medium tracking-widest uppercase px-2 py-0.5 transition-colors duration-200",
-            current === code ? "text-white" : "text-white/40 hover:text-white/70",
-            i < LOCALES.length - 1 && "border-r border-white/20"
-          )}
-        >
-          {label}
-        </button>
-      ))}
+    <div ref={ref} className="relative">
+      <button
+        onClick={() => setOpen((v) => !v)}
+        aria-label="Выбрать язык"
+        aria-expanded={open}
+        className={cn(
+          "flex items-center gap-1.5 py-1.5 px-2 transition-colors duration-200",
+          isHome
+            ? "text-white hover:text-white/70"
+            : "text-[#1a1a1a] hover:text-[#C4911E]"
+        )}
+      >
+        <RiGlobalLine size={16} aria-hidden="true" />
+        <span className="text-[11px] font-semibold tracking-widest uppercase">
+          {currentLocale.short}
+        </span>
+        <RiArrowDownSLine
+          size={14}
+          aria-hidden="true"
+          className={cn("transition-transform duration-200", open && "rotate-180")}
+        />
+      </button>
+
+      {open && (
+        <div className="absolute right-0 top-full mt-2 z-200 min-w-35 bg-white border border-[#e8e8e8] shadow-xl py-1">
+          {LOCALES.map(({ code, short, label }) => (
+            <button
+              key={code}
+              onClick={() => {
+                if (code !== current) router.replace(pathname, { locale: code });
+                setOpen(false);
+              }}
+              className={cn(
+                "w-full flex items-center gap-3 px-4 py-3 text-left transition-colors",
+                code === current
+                  ? "bg-[#f8f7f4] text-[#C4911E]"
+                  : "text-[#333] hover:bg-[#f8f7f4] hover:text-[#1a1a1a]"
+              )}
+            >
+              <span className="text-[10px] font-bold tracking-widest w-5 shrink-0">
+                {short}
+              </span>
+              <span className="text-[13px]">{label}</span>
+              {code === current && (
+                <RiCheckLine size={14} className="ml-auto text-[#C4911E]" aria-hidden="true" />
+              )}
+            </button>
+          ))}
+        </div>
+      )}
     </div>
   );
 }
