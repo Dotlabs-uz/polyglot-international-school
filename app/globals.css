@@ -25,10 +25,14 @@
   --font-sans:  var(--font-inter), "Inter", system-ui, sans-serif;
 }
 
-html { scroll-behavior: smooth; }
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
 
 body {
   font-family: var(--font-sans);
   color: var(--text-base);
   background: #fff;
+  overflow-x: hidden;
 }
