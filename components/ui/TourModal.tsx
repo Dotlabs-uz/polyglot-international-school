@@ -7,9 +7,12 @@ import {
   RiCloseLine,
   RiTelegramLine,
   RiCheckLine,
+  RiCheckDoubleLine,
   RiCalendarLine,
   RiUserLine,
   RiPhoneLine,
+  RiLoader4Line,
+  RiErrorWarningLine,
 } from "react-icons/ri";
 
 const ease = [0.16, 1, 0.3, 1] as const;
@@ -24,13 +27,21 @@ const BENEFITS = [
   "Бесплатный трансфер до школы и обратно",
 ];
 
-type Props = { open: boolean; onClose: () => void };
+type Status = "idle" | "loading" | "success" | "error";
+type Props  = { open: boolean; onClose: () => void };
 
 export function TourModal({ open, onClose }: Props) {
-  const [name, setName] = useState("");
-  const [phone, setPhone] = useState("");
-  const [day, setDay] = useState("");
+  const [name,   setName]   = useState("");
+  const [phone,  setPhone]  = useState("");
+  const [day,    setDay]    = useState("");
+  const [status, setStatus] = useState<Status>("idle");
 
+  /* reset when re-opened */
+  useEffect(() => {
+    if (open) { setName(""); setPhone(""); setDay(""); setStatus("idle"); }
+  }, [open]);
+
+  /* lock scroll */
   useEffect(() => {
     if (!open) return;
     const prev = document.body.style.overflow;
@@ -38,6 +49,7 @@ export function TourModal({ open, onClose }: Props) {
     return () => { document.body.style.overflow = prev; };
   }, [open]);
 
+  /* close on Escape */
   useEffect(() => {
     if (!open) return;
     const onKey = (e: KeyboardEvent) => { if (e.key === "Escape") onClose(); };
@@ -45,20 +57,19 @@ export function TourModal({ open, onClose }: Props) {
     return () => document.removeEventListener("keydown", onKey);
   }, [open, onClose]);
 
-  function handleSubmit(e: FormEvent) {
+  async function handleSubmit(e: FormEvent) {
     e.preventDefault();
-    const lines = [
-      "📋 Заявка на экскурсию — Polyglot International School",
-      "",
-      `👤 Имя: ${name}`,
-      `📱 Телефон: ${phone}`,
-      day ? `📅 Удобный день: ${day}` : "",
-      "",
-      "Отправлено с сайта polyglot.uz",
-    ].filter((l, i, arr) => !(l === "" && arr[i - 1] === ""));
-
-    const text = encodeURIComponent(lines.join("\n"));
-    window.open(`https://t.me/share/url?url=polyglot.uz&text=${text}`, "_blank");
+    setStatus("loading");
+    try {
+      const res = await fetch("/api/tour-request", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name, phone, day }),
+      });
+      setStatus(res.ok ? "success" : "error");
+    } catch {
+      setStatus("error");
+    }
   }
 
   return (
@@ -91,10 +102,8 @@ export function TourModal({ open, onClose }: Props) {
               className="relative bg-white w-full max-w-3xl max-h-[92vh] overflow-y-auto shadow-2xl"
               onClick={(e) => e.stopPropagation()}
             >
-              {/* Gold top bar */}
               <div className="h-1 bg-[#C4911E]" />
 
-              {/* Close */}
               <button
                 onClick={onClose}
                 aria-label="Закрыть"
@@ -113,15 +122,12 @@ export function TourModal({ open, onClose }: Props) {
                       Экскурсия в школу
                     </span>
                   </div>
-
                   <h2 className="font-serif font-semibold text-white text-[18px] sm:text-[20px] leading-[1.3] mb-8">
                     Прямо сейчас запишитесь на экскурсию в школу
                   </h2>
-
                   <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-white/40 mb-5">
                     Что получает родитель:
                   </p>
-
                   <ul className="flex flex-col gap-3.5 flex-1">
                     {BENEFITS.map((item, i) => (
                       <li key={i} className="flex items-start gap-3">
@@ -134,86 +140,136 @@ export function TourModal({ open, onClose }: Props) {
                   </ul>
                 </div>
 
-                {/* Right — form */}
-                <form onSubmit={handleSubmit} className="p-7 sm:p-9 flex flex-col gap-5">
-                  <h3 className="font-serif font-semibold text-[#1a1a1a] text-[18px] leading-[1.3] mb-1">
-                    Ваши данные
-                  </h3>
+                {/* Right — form / states */}
+                <div className="p-7 sm:p-9 flex flex-col">
 
-                  {/* Name */}
-                  <div className="flex flex-col gap-1.5">
-                    <label className="text-[11px] font-semibold uppercase tracking-widest text-[#888]">
-                      Имя и фамилия <span className="text-[#C4911E]">*</span>
-                    </label>
-                    <div className="relative">
-                      <RiUserLine
-                        size={15}
-                        className="absolute left-3.5 top-1/2 -translate-y-1/2 text-[#bbb]"
-                        aria-hidden="true"
-                      />
-                      <input
-                        type="text"
-                        required
-                        value={name}
-                        onChange={(e) => setName(e.target.value)}
-                        placeholder="Иванов Иван"
-                        className="w-full pl-9 pr-4 py-3 border border-[#e0e0e0] focus:border-[#C4911E] focus:outline-none text-[14px] text-[#1a1a1a] placeholder:text-[#bbb] transition-colors"
-                      />
+                  {/* SUCCESS */}
+                  {status === "success" && (
+                    <div className="flex flex-col items-center justify-center flex-1 text-center gap-5 py-8">
+                      <span className="w-16 h-16 rounded-full bg-[#C4911E]/10 flex items-center justify-center">
+                        <RiCheckDoubleLine size={32} className="text-[#C4911E]" />
+                      </span>
+                      <h3 className="font-serif font-semibold text-[#1a1a1a] text-[20px]">
+                        Заявка отправлена!
+                      </h3>
+                      <p className="text-[#666] text-[14px] leading-[1.7] max-w-xs">
+                        Мы свяжемся с вами в ближайшее время для подтверждения экскурсии.
+                      </p>
+                      <button
+                        onClick={onClose}
+                        className="mt-2 text-[11px] font-semibold uppercase tracking-widest text-[#C4911E] border border-[#C4911E] px-8 py-3 hover:bg-[#C4911E] hover:text-white transition-colors"
+                      >
+                        Закрыть
+                      </button>
                     </div>
-                  </div>
+                  )}
 
-                  {/* Phone */}
-                  <div className="flex flex-col gap-1.5">
-                    <label className="text-[11px] font-semibold uppercase tracking-widest text-[#888]">
-                      Номер телефона <span className="text-[#C4911E]">*</span>
-                    </label>
-                    <div className="relative">
-                      <RiPhoneLine
-                        size={15}
-                        className="absolute left-3.5 top-1/2 -translate-y-1/2 text-[#bbb]"
-                        aria-hidden="true"
-                      />
-                      <IMaskInput
-                        mask="+998 (00) 000-00-00"
-                        value={phone}
-                        onAccept={(v: string) => setPhone(v)}
-                        placeholder="+998 (90) 000-00-00"
-                        required
-                        className="w-full pl-9 pr-4 py-3 border border-[#e0e0e0] focus:border-[#C4911E] focus:outline-none text-[14px] text-[#1a1a1a] placeholder:text-[#bbb] transition-colors"
-                      />
+                  {/* ERROR */}
+                  {status === "error" && (
+                    <div className="flex flex-col items-center justify-center flex-1 text-center gap-5 py-8">
+                      <span className="w-16 h-16 rounded-full bg-red-50 flex items-center justify-center">
+                        <RiErrorWarningLine size={32} className="text-red-400" />
+                      </span>
+                      <h3 className="font-serif font-semibold text-[#1a1a1a] text-[20px]">
+                        Ошибка отправки
+                      </h3>
+                      <p className="text-[#666] text-[14px] leading-[1.7] max-w-xs">
+                        Не удалось отправить заявку. Пожалуйста, позвоните нам напрямую.
+                      </p>
+                      <a
+                        href="tel:+998904703000"
+                        className="mt-2 text-[11px] font-semibold uppercase tracking-widest text-white bg-[#142444] px-8 py-3 hover:bg-[#1c3060] transition-colors"
+                      >
+                        +998 90 470 30 00
+                      </a>
+                      <button
+                        onClick={() => setStatus("idle")}
+                        className="text-[13px] text-[#C4911E] hover:underline"
+                      >
+                        Попробовать снова
+                      </button>
                     </div>
-                  </div>
+                  )}
 
-                  {/* Day (optional) */}
-                  <div className="flex flex-col gap-1.5">
-                    <label className="text-[11px] font-semibold uppercase tracking-widest text-[#888]">
-                      Удобный день <span className="text-[#bbb] font-normal normal-case tracking-normal">— необязательно</span>
-                    </label>
-                    <div className="relative">
-                      <RiCalendarLine
-                        size={15}
-                        className="absolute left-3.5 top-1/2 -translate-y-1/2 text-[#bbb]"
-                        aria-hidden="true"
-                      />
-                      <input
-                        type="date"
-                        value={day}
-                        onChange={(e) => setDay(e.target.value)}
-                        min={new Date().toISOString().split("T")[0]}
-                        className="w-full pl-9 pr-4 py-3 border border-[#e0e0e0] focus:border-[#C4911E] focus:outline-none text-[14px] text-[#1a1a1a] transition-colors"
-                      />
-                    </div>
-                  </div>
+                  {/* FORM */}
+                  {(status === "idle" || status === "loading") && (
+                    <form onSubmit={handleSubmit} className="flex flex-col gap-5 flex-1">
+                      <h3 className="font-serif font-semibold text-[#1a1a1a] text-[18px] leading-[1.3] mb-1">
+                        Ваши данные
+                      </h3>
 
-                  <button
-                    type="submit"
-                    className="mt-auto flex items-center justify-center gap-2.5 w-full bg-[#142444] hover:bg-[#1c3060] text-white font-semibold text-[12px] uppercase tracking-widest py-4 transition-colors duration-200"
-                  >
-                    <RiTelegramLine size={18} />
-                    Оставить заявку в Telegram
-                  </button>
-                </form>
+                      <div className="flex flex-col gap-1.5">
+                        <label className="text-[11px] font-semibold uppercase tracking-widest text-[#888]">
+                          Имя и фамилия <span className="text-[#C4911E]">*</span>
+                        </label>
+                        <div className="relative">
+                          <RiUserLine size={15} className="absolute left-3.5 top-1/2 -translate-y-1/2 text-[#bbb]" aria-hidden="true" />
+                          <input
+                            type="text"
+                            required
+                            value={name}
+                            onChange={(e) => setName(e.target.value)}
+                            placeholder="Иванов Иван"
+                            className="w-full pl-9 pr-4 py-3 border border-[#e0e0e0] focus:border-[#C4911E] focus:outline-none text-[14px] text-[#1a1a1a] placeholder:text-[#bbb] transition-colors"
+                          />
+                        </div>
+                      </div>
 
+                      <div className="flex flex-col gap-1.5">
+                        <label className="text-[11px] font-semibold uppercase tracking-widest text-[#888]">
+                          Номер телефона <span className="text-[#C4911E]">*</span>
+                        </label>
+                        <div className="relative">
+                          <RiPhoneLine size={15} className="absolute left-3.5 top-1/2 -translate-y-1/2 text-[#bbb]" aria-hidden="true" />
+                          <IMaskInput
+                            mask="+998 (00) 000-00-00"
+                            value={phone}
+                            onAccept={(v: string) => setPhone(v)}
+                            placeholder="+998 (90) 000-00-00"
+                            required
+                            className="w-full pl-9 pr-4 py-3 border border-[#e0e0e0] focus:border-[#C4911E] focus:outline-none text-[14px] text-[#1a1a1a] placeholder:text-[#bbb] transition-colors"
+                          />
+                        </div>
+                      </div>
+
+                      <div className="flex flex-col gap-1.5">
+                        <label className="text-[11px] font-semibold uppercase tracking-widest text-[#888]">
+                          Удобный день{" "}
+                          <span className="text-[#bbb] font-normal normal-case tracking-normal">— необязательно</span>
+                        </label>
+                        <div className="relative">
+                          <RiCalendarLine size={15} className="absolute left-3.5 top-1/2 -translate-y-1/2 text-[#bbb]" aria-hidden="true" />
+                          <input
+                            type="date"
+                            value={day}
+                            onChange={(e) => setDay(e.target.value)}
+                            min={new Date().toISOString().split("T")[0]}
+                            className="w-full pl-9 pr-4 py-3 border border-[#e0e0e0] focus:border-[#C4911E] focus:outline-none text-[14px] text-[#1a1a1a] transition-colors"
+                          />
+                        </div>
+                      </div>
+
+                      <button
+                        type="submit"
+                        disabled={status === "loading"}
+                        className="mt-auto flex items-center justify-center gap-2.5 w-full bg-[#142444] hover:bg-[#1c3060] disabled:opacity-60 text-white font-semibold text-[12px] uppercase tracking-widest py-4 transition-colors duration-200"
+                      >
+                        {status === "loading" ? (
+                          <>
+                            <RiLoader4Line size={18} className="animate-spin" />
+                            Отправка...
+                          </>
+                        ) : (
+                          <>
+                            <RiTelegramLine size={18} />
+                            Записаться на экскурсию
+                          </>
+                        )}
+                      </button>
+                    </form>
+                  )}
+
+                </div>
               </div>
             </motion.div>
           </div>
