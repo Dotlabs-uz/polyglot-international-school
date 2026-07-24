@@ -121,7 +121,22 @@
     "founderUnis": "Harvard, University of Edinburgh va Viadrina",
     "para2": "Maktab jamoasi — xalqaro amaliyotga ega mutaxassislar ({unis}) va maktab ta'limida o'n yildan ortiq tajribaga ega.",
     "teamUnis": "University of Birmingham, ISF",
-    "photoAlt": "Shohruх Kudratov — Polyglot International School asoschisi"
+    "founderRole": "Polyglot International School asoschisi",
+    "photoAlt": "Shohruх Kudratov — Polyglot International School asoschisi",
+    "photo2Alt": "Shohruх Kudratov"
+  },
+  "director": {
+    "label": "Akademik direktor",
+    "role": "Polyglot International School akademik direktori",
+    "heading": "O'quv jarayonini ichidan quradigan xalqaro mutaxassis.",
+    "subtext": "Steve Pellerine Polyglot International School akademik yo'nalishini boshqaradi. 30 yildan ortiq vaqt davomida u bolalar nafaqat o'rganadigan, balki fikrlash, savol berish va xalqaro raqobatda g'alaba qozonish qobiliyatini rivojlantiruvchi muhitlar yaratgan.",
+    "cred1": "Xalqaro ta'limda 30 yildan ortiq tajriba.",
+    "cred2": "Harvard universitetida 5+ yil dars bergan.",
+    "cred3": "Yaponiya, Xitoy, Kanada va Dubayning yetakchi maktablarida ishlagan.",
+    "cred4": "Forbes tomonidan Xitoyning eng muvaffaqiyatli o'qituvchilaridan biri sifatida tan olingan.",
+    "cred5": "Maktab ta'limi sohasida tan olingan xalqaro ekspert.",
+    "photo1Alt": "Steve Pellerine — Polyglot International School akademik direktori",
+    "photo2Alt": "Steve Pellerine dars paytida"
   },
   "enrollment": {
     "heading": "2026–2027 o'quv yiliga qabul ochiq.",

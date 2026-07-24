@@ -6,6 +6,7 @@ import { SchoolChoiceSection } from "@/components/sections/SchoolChoiceSection";
 import { FeaturesSection } from "@/components/sections/FeaturesSection";
 import { CampusSection } from "@/components/sections/CampusSection";
 import { FounderSection } from "@/components/sections/FounderSection";
+import { DirectorSection } from "@/components/sections/DirectorSection";
 import { EnrollmentSection } from "@/components/sections/EnrollmentSection";
 
 const SITE_URL = "https://polyglot.uz";
@@ -103,6 +104,7 @@ export default async function HomePage({
       <FeaturesSection />
       <CampusSection />
       <FounderSection />
+      <DirectorSection />
       <EnrollmentSection />
     </>
   );

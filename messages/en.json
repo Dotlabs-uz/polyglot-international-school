@@ -121,7 +121,22 @@
     "founderUnis": "Harvard, University of Edinburgh and Viadrina",
     "para2": "The school team are specialists with international practice ({unis}) and over a decade of experience in school education.",
     "teamUnis": "University of Birmingham, ISF",
-    "photoAlt": "Shokhrukh Kudratov — founder of Polyglot International School"
+    "founderRole": "Founder of Polyglot International School",
+    "photoAlt": "Shokhrukh Kudratov — founder of Polyglot International School",
+    "photo2Alt": "Shokhrukh Kudratov"
+  },
+  "director": {
+    "label": "Academic Director",
+    "role": "Academic Director of Polyglot International School",
+    "heading": "An international expert who builds the learning process from within.",
+    "subtext": "Steve Pellerine leads the academic direction of Polyglot International School. For over 30 years he has shaped environments where children don't just study — they learn to think, ask questions and compete on the world stage.",
+    "cred1": "Over 30 years of experience in international education.",
+    "cred2": "5+ years teaching at Harvard University.",
+    "cred3": "Experience in leading schools in Japan, China, Canada and Dubai.",
+    "cred4": "Named by Forbes as one of China's most successful educators.",
+    "cred5": "Recognised international expert in school education.",
+    "photo1Alt": "Steve Pellerine — Academic Director of Polyglot International School",
+    "photo2Alt": "Steve Pellerine during a class"
   },
   "enrollment": {
     "heading": "Enrolment for 2026–2027 academic year is open.",

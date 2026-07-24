@@ -82,14 +82,37 @@ export function FounderSection() {
             </Reveal>
 
             <Reveal direction="left" delay={0.1}>
-              <div className="relative w-full aspect-4/3 overflow-hidden">
-                <Image
-                  src="/founder.jpg"
-                  alt={t("photoAlt")}
-                  fill
-                  className="object-cover object-center"
-                  sizes="(max-width: 1024px) 90vw, 45vw"
-                />
+              <div className="relative">
+                {/* Main photo */}
+                <div className="relative w-full aspect-3/4 overflow-hidden">
+                  <Image
+                    src="/founder.jpg"
+                    alt={t("photoAlt")}
+                    fill
+                    className="object-cover object-top"
+                    sizes="(max-width: 1024px) 90vw, 45vw"
+                  />
+                  {/* Overlay name tag */}
+                  <div className="absolute bottom-0 left-0 right-0 bg-[#142444]/90 backdrop-blur-sm px-6 py-5">
+                    <p className="text-white font-serif font-semibold text-[20px] leading-tight">
+                      {t("founderName")}
+                    </p>
+                    <p className="text-[#C4911E] text-[11px] font-semibold uppercase tracking-widest mt-1">
+                      {t("founderRole")}
+                    </p>
+                  </div>
+                </div>
+
+                {/* Second photo — accent */}
+                <div className="absolute -right-4 md:-right-8 -bottom-6 md:-bottom-8 w-2/5 aspect-3/4 overflow-hidden border-4 border-white shadow-xl">
+                  <Image
+                    src="/founder2.jpg"
+                    alt={t("photo2Alt")}
+                    fill
+                    className="object-cover object-center"
+                    sizes="200px"
+                  />
+                </div>
               </div>
             </Reveal>
 
