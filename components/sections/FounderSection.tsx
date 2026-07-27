@@ -95,7 +95,7 @@ export function FounderSection() {
                   {/* Overlay name tag */}
                   <div className="absolute bottom-0 left-0 right-0 bg-[#142444]/90 backdrop-blur-sm px-6 py-5">
                     <p className="text-white font-serif font-semibold text-[20px] leading-tight">
-                      {t("founderName")}
+                      Шохрух Кудратов
                     </p>
                     <p className="text-[#C4911E] text-[11px] font-semibold uppercase tracking-widest mt-1">
                       {t("founderRole")}
