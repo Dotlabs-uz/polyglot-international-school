@@ -3,4 +3,4 @@ Allow: /
 Disallow: /api/
 Disallow: /_next/
 
-Sitemap: https://polyglot.uz/sitemap.xml
+Sitemap: https://www.pischool.uz/sitemap.xml

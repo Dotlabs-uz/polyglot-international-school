@@ -1,6 +1,6 @@
 import type { MetadataRoute } from "next";
 
-const SITE_URL = "https://polyglot.uz";
+const SITE_URL = "https://www.pischool.uz";
 const locales = ["ru", "en", "uz"] as const;
 
 export default function sitemap(): MetadataRoute.Sitemap {

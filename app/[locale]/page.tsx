@@ -9,7 +9,7 @@ import { FounderSection } from "@/components/sections/FounderSection";
 import { DirectorSection } from "@/components/sections/DirectorSection";
 import { EnrollmentSection } from "@/components/sections/EnrollmentSection";
 
-const SITE_URL = "https://polyglot.uz";
+const SITE_URL = "https://www.pischool.uz";
 
 export async function generateMetadata({
   params,
