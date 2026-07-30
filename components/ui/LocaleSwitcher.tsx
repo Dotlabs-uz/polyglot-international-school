@@ -51,13 +51,13 @@ export function LocaleSwitcher() {
         )}
       >
         <RiGlobalLine size={16} aria-hidden="true" />
-        <span className="text-[11px] font-semibold tracking-widest uppercase">
+        <span className="hidden sm:inline text-[11px] font-semibold tracking-widest uppercase">
           {currentLocale.short}
         </span>
         <RiArrowDownSLine
           size={14}
           aria-hidden="true"
-          className={cn("transition-transform duration-200", open && "rotate-180")}
+          className={cn("hidden sm:inline transition-transform duration-200", open && "rotate-180")}
         />
       </button>
 

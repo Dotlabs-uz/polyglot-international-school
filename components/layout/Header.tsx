@@ -60,7 +60,7 @@ export function Header() {
                 alt="Polyglot International School — премиальная частная школа в Самарканде"
                 width={233}
                 height={50}
-                className="object-contain h-10 lg:h-12 w-auto"
+                className="object-contain h-8 sm:h-10 lg:h-12 w-auto"
                 priority
               />
             </Link>
