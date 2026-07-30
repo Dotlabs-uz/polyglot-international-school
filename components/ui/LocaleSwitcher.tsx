@@ -24,11 +24,15 @@ export function LocaleSwitcher() {
 
   useEffect(() => {
     if (!open) return;
-    function onOutside(e: MouseEvent) {
+    function onOutside(e: MouseEvent | TouchEvent) {
       if (ref.current && !ref.current.contains(e.target as Node)) setOpen(false);
     }
     document.addEventListener("mousedown", onOutside);
-    return () => document.removeEventListener("mousedown", onOutside);
+    document.addEventListener("touchstart", onOutside);
+    return () => {
+      document.removeEventListener("mousedown", onOutside);
+      document.removeEventListener("touchstart", onOutside);
+    };
   }, [open]);
 
   const currentLocale = LOCALES.find((l) => l.code === current)!;
@@ -58,7 +62,7 @@ export function LocaleSwitcher() {
       </button>
 
       {open && (
-        <div className="absolute right-0 top-full mt-2 z-200 min-w-35 bg-white border border-[#e8e8e8] shadow-xl py-1">
+        <div className="absolute right-0 top-full mt-2 z-400 min-w-35 bg-white border border-[#e8e8e8] shadow-xl py-1">
           {LOCALES.map(({ code, short, label }) => (
             <button
               key={code}
